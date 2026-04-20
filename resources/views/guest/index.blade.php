@@ -1,9 +1,9 @@
 {{-- extend dari layouts --}}
-@extends('layouts.guest.landingPage')
+@extends('layouts.guest.app')
 
 {{-- isi kontent landing page guest --}}
-@section('contentLandingPage')
-    <main class="">
+@section('content')
+    <main class="pt-12">
         <!-- Hero Section -->
         <section class="relative px-6 py-12 md:py-24 max-w-screen-2xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">

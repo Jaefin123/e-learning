@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>CeLOE LMS - Telkom University</title>
+    <title>FT LMS - Universitas wiralodra</title>
 
     <!-- Memanggil CSS & JS hasil compile Vite -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -17,7 +17,7 @@
     @include('layouts.guest.navbar')
 
     <!-- content landing page (index guest)-->
-    @yield('contentLandingPage')
+    @yield('content')
 
     <!-- Sisipkan footer -->
     @include('layouts.guest.footer')
