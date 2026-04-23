@@ -3,7 +3,7 @@
 
 {{-- isi kontent landing page guest --}}
 @section('content')
-    <main class="pt-12">
+    <main class="pt-8">
         <!-- Hero Section -->
         <section class="relative px-6 py-12 md:py-24 max-w-screen-2xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -185,8 +185,9 @@
                             class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-10">
                             <span
                                 class="text-primary-fixed font-bold text-xs uppercase tracking-widest mb-4">Announcement</span>
-                            <h3 class="text-3xl font-extrabold text-white mb-4 max-w-2xl">Telkom University Achieves
-                                Global Ranking Excellence for Digital Research</h3>
+                            <h3 class="text-3xl font-extrabold text-white mb-4 max-w-2xl">
+                                Fakultas Teknik universitas wiralodra akan membuka program studi teknik lingkungan mulai tahun ajaran baru
+                            </h3>
                             <button class="text-white text-sm font-bold flex items-center gap-2">Read Full Story <span
                                     class="material-symbols-outlined text-sm">open_in_new</span></button>
                         </div>

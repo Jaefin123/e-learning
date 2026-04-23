@@ -5,7 +5,7 @@
             <div>
                 <span class="text-xl font-bold text-on-surface mb-4 block">Academic Editorial</span>
                 <p class="text-sm leading-relaxed mb-6 pr-4">
-                    CeLOE LMS is Telkom University's premier digital learning ecosystem, cultivating the modern
+                    FT LMS is Faculty of enggenearing wiralodra university's premier digital learning ecosystem, cultivating the modern
                     curator of knowledge through world-class academic resources.
                 </p>
                 <div class="flex gap-4">
@@ -53,7 +53,7 @@
         </div>
         <div
             class="pt-8 border-t border-outline-variant/30 text-xs text-on-surface-variant/70 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p>© 2024 Academic Editorial. All rights reserved. Cultivating the modern curator.</p>
+            <p>© 2026 Computer Enggeneering wiralodra university. All rights reserved. Cultivating the modern curator.</p>
             <div class="flex gap-8">
                 <a class="hover:text-on-surface transition-colors" href="#">Cookie Policy</a>
                 <a class="hover:text-on-surface transition-colors" href="#">Ethics</a>

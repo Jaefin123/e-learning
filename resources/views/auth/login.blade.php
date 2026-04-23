@@ -147,10 +147,10 @@
                                     device
                                 </label>
                                 <a href="#"
-                                    class="font-label text-[10px] font-bold text-primary uppercase tracking-widest hover:underline">Forgot?</a>
+                                    class="font-label text-[10px] font-bold text-primary uppercase tracking-widest hover:underline">Forgot an account?</a>
                                 <a href="/register"
                                     class="font-label text-[10px] font-bold text-primary uppercase tracking-widest hover:underline">
-                                    belum punya akun?
+                                    don't have an account yet?
                                 </a>
                             </div>
 
