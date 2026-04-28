@@ -1,4 +1,4 @@
-@extends('layouts.dosen.app')
+@extends('layouts.auth.app')
 @section('content')
 <main class="ml-72 min-h-screen p-12">
     <!-- Top Navigation Shell -->

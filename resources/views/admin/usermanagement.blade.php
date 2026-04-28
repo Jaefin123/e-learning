@@ -1,4 +1,4 @@
-@extends('layouts.admin.app')
+@extends('layouts.auth.app')
 @section('content')
 <main class="ml-64 min-h-screen transition-all duration-300">
     <!-- TopNavBar -->

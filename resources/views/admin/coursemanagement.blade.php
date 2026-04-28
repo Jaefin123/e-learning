@@ -1,4 +1,4 @@
-@extends('layouts.admin.app')
+@extends('layouts.auth.app')
 @section('content')
 <main class="ml-64 p-12 max-w-7xl mx-auto">
     <!-- Header Section -->

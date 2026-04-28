@@ -1,4 +1,4 @@
-@extends('layouts.admin.app')
+@extends('layouts.auth.app')
 @section('content')
 <main class="ml-72 p-12 min-h-screen">
     <!-- Welcome Hero Section -->

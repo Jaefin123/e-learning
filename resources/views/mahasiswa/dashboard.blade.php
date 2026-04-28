@@ -1,4 +1,4 @@
-@extends('layouts.mahasiswa.app')
+@extends('layouts.auth.app')
 @section('content')
 <main class="lg:ml-64 pt-24 px-8 pb-12 min-h-screen">
     <!-- Header / Welcome Section -->

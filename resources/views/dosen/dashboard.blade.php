@@ -1,4 +1,4 @@
-@extends('layouts.dosen.app')
+@extends('layouts.auth.app')
 @Section('content')
 <main class="ml-72 min-h-screen">
     <section class="p-12 max-w-7xl mx-auto space-y-12">

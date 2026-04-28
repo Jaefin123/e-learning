@@ -1,35 +1,6 @@
-@extends('layouts.mahasiswa.app')
+@extends('layouts.auth.app')
 @section('content')
 <main class="ml-64 min-h-screen">
-    <!-- TopNavBar -->
-    <header
-        class="bg-white/70 sticky top-0 backdrop-blur-3xl editorial-shadow flex justify-between items-center w-full px-8 h-16 z-40">
-        <div class="flex items-center gap-8">
-            <div class="text-xl font-black tracking-tighter text-purple-900">The Academic Editorial</div>
-            <div class="relative w-80">
-                <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg"
-                    data-icon="search">search</span>
-                <input
-                    class="w-full bg-surface-container-high border-none rounded-md pl-10 py-1.5 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-slate-400"
-                    placeholder="Search courses, faculty..." type="text" />
-            </div>
-        </div>
-        <div class="flex items-center gap-6">
-            <div class="flex gap-4">
-                <button class="text-slate-500 hover:bg-purple-50 p-2 rounded-full transition-colors active:scale-95">
-                    <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
-                </button>
-                <button class="text-slate-500 hover:bg-purple-50 p-2 rounded-full transition-colors active:scale-95">
-                    <span class="material-symbols-outlined" data-icon="settings">settings</span>
-                </button>
-            </div>
-            <div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden border-2 border-white editorial-shadow">
-                <img alt="Student avatar"
-                    data-alt="close-up portrait of a thoughtful young man with curly hair in a university library setting with soft bookshelf background"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-x1R7S8a9KWJHRq7MGi6xv806sCGpBIFhgf5YYYxq216vQwAYszBUte3esiiPsoUylP-46BT5yOKl85GCqdRGlXWpHvyalwjroPVEbjWn5deM4HB6xVlSRzjk-NrqrX-33I83ifVFYh1PiisnT26doueiWOeE9rYZVA1MVkbJO-OU858f07XyGgAsgJIIP6m7utK1QIkGnfBH8UIsSXpWqsREj5QBzMeXgY7gG5LSjNi0PDyGYxyUluLVN1a2Lm7bocW-MeXoDng" />
-            </div>
-        </div>
-    </header>
     <!-- Canvas Content -->
     <div class="px-12 py-16 max-w-7xl mx-auto">
         <!-- Hero Header Section -->

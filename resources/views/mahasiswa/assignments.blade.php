@@ -1,43 +1,6 @@
-@extends('layouts.mahasiswa.app')
+@extends('layouts.auth.app')
 @section('content')
 <main class="ml-64 min-h-screen relative">
-    <!-- TopNavBar -->
-    <header
-        class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl shadow-[0_12px_32px_rgba(45,0,79,0.04)]">
-        <div class="flex items-center justify-between px-8 h-full">
-            <div class="flex items-center space-x-8">
-                <span class="font-['Inter'] font-bold text-xl text-purple-900 dark:text-purple-100">The Academic
-                    Editorial</span>
-                <div
-                    class="relative focus-within:ring-2 focus-within:ring-purple-200 dark:focus-within:ring-purple-900/30 rounded-lg">
-                    <span
-                        class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 material-symbols-outlined text-xl"
-                        data-icon="search">search</span>
-                    <input
-                        class="bg-surface-container-high/50 border-none rounded-lg pl-10 pr-4 py-1.5 text-sm w-64 focus:ring-0"
-                        placeholder="Search curriculum..." type="text" />
-                </div>
-            </div>
-            <nav class="flex items-center space-x-8">
-                <a class="text-slate-500 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-300 transition-colors font-medium"
-                    href="#">Overview</a>
-                <a class="text-slate-500 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-300 transition-colors font-medium"
-                    href="#">Semester</a>
-                <a class="text-purple-900 dark:text-purple-100 border-b-2 border-purple-900 font-medium"
-                    href="#">Curriculum</a>
-                <div class="flex items-center space-x-4 border-l border-slate-200 dark:border-slate-800 pl-8">
-                    <button class="text-slate-500 hover:text-purple-600 transition-colors">
-                        <span class="material-symbols-outlined" data-icon="notifications_none">notifications_none</span>
-                    </button>
-                    <div class="w-8 h-8 rounded-full overflow-hidden border border-purple-100">
-                        <img alt="Academic Student Avatar" class="w-full h-full object-cover"
-                            data-alt="professional headshot of a serious academic curator with clean glasses and a soft library backdrop"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDL-6M9FIWeRWB7j9RsoPYChTGKsP2w2ehTylGVrXrZI1vjmHNdn_zzgcRliuI7wqJhjVbkMq3vlpt_wjBQnv8JY5EQBa16FP1FOFJZlKB5c07mLx7c1mDR5iqKXHpK5XvGK2OrteRGbyuZ_hT6F_TrezNWeqVs8NfazFcXz1pPX3_fc1dmgRzt53nTqJ9mNaZEWGXd8nOuXEn1oMFOTiCoEQaiefMmfbmIdV8TSUvDFwYV5QA7-9qoj7HBFuA2hM-ZRW-v2OuLp9c" />
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </header>
     <!-- Canvas -->
     <div class="pt-24 px-12 pb-20 max-w-7xl mx-auto">
         <!-- Hero Section -->

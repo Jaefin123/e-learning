@@ -14,16 +14,14 @@
 
 <body class="bg-surface text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
     <!-- Sisipkan Navbar -->
-    @include('layouts.dosen.navbar') // di ganti sama navbar dan side bar dashboard mahasigma
+    @include('layouts.auth.navbar') // di ganti sama navbar dan side bar dashboard mahasigma
 
-    @include('layouts.dosen.sidebar')
+    @include('layouts.auth.sidebar')
 
     <!-- content landing page (index guest)-->
-    @yield('content')
-
-    <!-- Sisipkan footer -->
-    {{-- @include('layouts.guest.footer') --}} // opsional
-
+    <div class="pt-4">
+        @yield('content')
+    </div>
 </body>
 
 </html>
