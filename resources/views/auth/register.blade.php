@@ -158,10 +158,10 @@
                             </div> --}}
 
                             <x-input-symbol size="md" label="Password" type="password" name="password" icon=""
-                                placeholder="••••••••" />
+                                placeholder="••••••••" togglePassword />
 
                             <x-input-symbol size="md" label="Password confirmation" type="password" name="password_confirmation" icon=""
-                                placeholder="••••••••" />
+                                placeholder="••••••••" togglePassword />
 
                             {{-- <div class="space-y-2">
                                 <label
@@ -238,7 +238,7 @@
                                 </div>
                             </div>
 
-                            <x-button-satu size='lg' class="w-full">Complete Registration</x-button-satu>
+                            <x-button-satu type="submit" size="lg" width="full">Complete Registration</x-button-satu>
 
                             {{-- <div class="pt-6">
                                 <button

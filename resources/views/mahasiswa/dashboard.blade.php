@@ -5,7 +5,7 @@
     <header class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
         <div class="max-w-2xl">
             <h1 class="text-5xl md:text-7xl font-headline font-extrabold tracking-tight text-on-surface mb-4">
-                Welcome back, <span class="italic text-primary serif-text font-normal">Julian.</span>
+                Welcome back, <span class="italic text-primary serif-text font-normal">{{ ucfirst(auth()->user()->name) }}.</span>
             </h1>
             <p class="serif-text text-xl text-on-surface-variant leading-relaxed">
                 You have <span class="font-bold text-primary">3 assignments</span> due this week. Your current

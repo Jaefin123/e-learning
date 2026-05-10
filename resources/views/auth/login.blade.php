@@ -88,6 +88,9 @@
                 <div class="bg-surface-container-low p-1 rounded-xl">
                     <div
                         class="bg-surface-container-lowest p-8 md:p-12 rounded-xl shadow-[0px_12px_32px_rgba(45,0,79,0.06)]">
+                        @if ($errors->any())
+                            <x-popup-message type="error" title="Login Gagal" :message="$errors->first()" />
+                        @endif
                         <div class="mb-10">
                             <h2 class="font-headline text-3xl font-bold text-on-surface mb-2">Student Sign In</h2>
                             <p class="font-body text-on-surface-variant">Enter your credentials to access the editorial
@@ -109,21 +112,11 @@
                                 </div>
                             </div> --}}
 
-                            <x-input-symbol 
-                                size="md"
-                                label="Student Email" 
-                                type="email" 
-                                name="email" 
-                                icon="badge"
-                                placeholder="e.g. @gmail.com" />
+                            <x-input-symbol size="lg" width="full" label="Student Email" type="email" name="email"
+                                icon="badge" placeholder="e.g. @gmail.com" />
 
-                            <x-input-symbol 
-                                size="md"
-                                label="Password" 
-                                type="password" 
-                                name="password" 
-                                icon="lock"
-                                placeholder="••••••••" />
+                            <x-input-symbol size="lg" width="full" label="Password" type="password" name="password" icon="lock"
+                                placeholder="••••••••" togglePassword />
 
                             {{-- <div class="space-y-1.5">
                                 <div class="flex justify-between items-center px-1">
@@ -147,7 +140,8 @@
                                     device
                                 </label>
                                 <a href="#"
-                                    class="font-label text-[10px] font-bold text-primary uppercase tracking-widest hover:underline">Forgot an account?</a>
+                                    class="font-label text-[10px] font-bold text-primary uppercase tracking-widest hover:underline">Forgot
+                                    an account?</a>
                                 <a href="/register"
                                     class="font-label text-[10px] font-bold text-primary uppercase tracking-widest hover:underline">
                                     don't have an account yet?
@@ -158,7 +152,7 @@
                                 class="w-full bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline font-bold py-4 rounded-xl shadow-lg shadow-primary/10 hover:opacity-90 transition-all duration-300 transform active:scale-95">
                                 Access Portal
                             </button> --}}
-                            <x-button-satu size='lg' class="w-full ">Access Portal</x-button-satu>
+                            <x-button-satu type="submit" size="xl" width="full">Access Portal</x-button-satu>
                         </form>
 
                         {{-- <form method="POST" action="{{ route('login') }}">
