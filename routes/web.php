@@ -74,6 +74,11 @@ Route::middleware(['auth', 'role:dosen'])->prefix('dosen')->group(function () {
         return view('dosen.grading', compact('page'));
     })->name('grading');
 
+    Route::get('/qr-absensi', function () {
+        $page = 'page-qrabsensi';
+        return view('dosen.pageQrAbsensi', compact('page'));
+    })->name('qrabsensi');
+
 });
 
 // ========================================================= hanya admin yg akses ====================================================

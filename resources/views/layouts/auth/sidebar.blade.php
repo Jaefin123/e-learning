@@ -49,6 +49,11 @@
                  <span class="material-symbols-outlined">grade</span>
                  <span class="font-sans uppercase text-xs tracking-widest font-medium">Grading</span>
              </a>
+            <a class="{{ $page == 'page-qrabsensi' ? 'bg-white text-purple-900 rounded-l-full ml-4 pl-4 py-3 shadow-sm flex items-center gap-4 transition-all duration-300 translate-x-1' : 'text-slate-500 hover:text-purple-700 ml-4 pl-4 py-3 flex items-center gap-4 transition-all duration-300 hover:bg-white/50' }}"
+                href="{{ route('qrabsensi') }}">
+                <span class="material-symbols-outlined">qr_code</span>
+                <span class="font-sans uppercase text-xs tracking-widest font-medium">QR Absensi</span>
+            </a>
          @endif
 
          @if (Auth::user()->role == 'admin')

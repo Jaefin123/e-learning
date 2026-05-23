@@ -6,7 +6,7 @@
             <span class="font-sans uppercase tracking-[0.2em] text-[11px] font-extrabold text-primary">Academic
                 Excellence</span>
             <h2 class="font-sans text-5xl font-extrabold tracking-tight text-on-surface">Good Morning, <span
-                    class="font-serif italic font-normal text-primary">Dr. Sarah Sterling</span></h2>
+                    class="font-serif italic font-normal text-primary">{{ ucfirst(auth()->user()->name) }}.</span></h2>
             <p class="font-body text-slate-600 text-lg max-w-2xl mt-4">Welcome back to your curriculum hub. You have 12
                 pending submissions across 3 active courses this morning.</p>
         </header>
