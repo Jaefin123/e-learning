@@ -10,23 +10,22 @@
                 <div class="lg:col-span-6 z-10">
                     <span
                         class="inline-block px-4 py-1.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-xs font-bold tracking-widest uppercase mb-6">
-                        Excellence in Digital Learning
+                        Keunggulan Pembelajaran Digital
                     </span>
                     <h1 class="text-5xl md:text-7xl font-extrabold text-on-surface leading-[1.1] mb-8 tracking-tighter">
                         Platform LMS <span class="text-primary italic">Fakultas teknik universitas
                             wiralodra</span>
                     </h1>
                     <p class="text-lg text-on-surface-variant max-w-xl mb-10 leading-relaxed font-body">
-                        Empowering the next generation of digital leaders through world-class academic resources and an
-                        immersive learning ecosystem.
+                        Memberdayakan generasi pemimpin digital berikutnya melalui sumber daya akademik bertaraf dunia dan ekosistem pembelajaran yang imersif.
                     </p>
                     <div class="flex flex-wrap gap-4">
                         {{-- <button
                             class="px-8 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-xl shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
                             Explore Courses
                         </button> --}}
-                        <x-button-satu size='lg'>Explore Courses</x-button-satu>
-                        <x-button-satu size='lg' variant='ghost'>Learn More</x-button-satu>
+                        <x-button-satu size='lg'>Jelajahi Kursus</x-button-satu>
+                        <x-button-satu size='lg' variant='ghost'>Pelajari Lebih Lanjut</x-button-satu>
 
                         {{-- <button
                             class="px-8 py-4 bg-surface-container-high text-on-surface font-bold rounded-xl hover:bg-surface-container-highest transition-colors">
@@ -67,7 +66,7 @@
                     </div>
                     <div>
                         <h3 class="text-3xl font-extrabold text-on-surface">100+</h3>
-                        <p class="text-on-surface-variant font-semibold">Courses</p>
+                        <p class="text-on-surface-variant font-semibold">Kursus</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-6 p-8 bg-surface-container-lowest rounded-2xl">
@@ -76,7 +75,7 @@
                     </div>
                     <div>
                         <h3 class="text-3xl font-extrabold text-on-surface">20k+</h3>
-                        <p class="text-on-surface-variant font-semibold">Students</p>
+                        <p class="text-on-surface-variant font-semibold">Mahasiswa</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-6 p-8 bg-surface-container-lowest rounded-2xl">
@@ -85,7 +84,7 @@
                     </div>
                     <div>
                         <h3 class="text-3xl font-extrabold text-on-surface">Expert</h3>
-                        <p class="text-on-surface-variant font-semibold">Faculty</p>
+                        <p class="text-on-surface-variant font-semibold">Dosen</p>
                     </div>
                 </div>
             </div>
@@ -95,12 +94,11 @@
             <div class="max-w-screen-2xl mx-auto">
                 <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                     <div>
-                        <h2 class="text-4xl font-extrabold text-on-surface mb-2">Featured Courses</h2>
-                        <p class="text-on-surface-variant font-medium">Curated high-demand programs for your career
-                            growth.</p>
+                        <h2 class="text-4xl font-extrabold text-on-surface mb-2">Kursus Unggulan</h2>
+                        <p class="text-on-surface-variant font-medium">Program populer yang dipilih untuk pengembangan karier Anda.</p>
                     </div>
                     <button class="text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all">
-                        View All Courses <span class="material-symbols-outlined">arrow_forward</span>
+                        Lihat Semua Kursus <span class="material-symbols-outlined">arrow_forward</span>
                     </button>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -112,18 +110,17 @@
                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAz7s1D2caCSaVteGpm4FE-SCXhiI_9U6oCQUnhtTFhOc2fVFduRcQsTqU4jnMV6gvz5oE39HKUF4B6l9U_ev1dvuBJ7uNdJeHqnfGaoT3YqKqvojaqdNKX3HdF0CXjKHDlemcdS6DMhI3hW7fNDJHYPsYFTsTdm-ZXTzkrdxabcJrjiNETTl9CrNGSFbdnGxBL-jDGZXyS3PYdKxkW0EjoFFNYkha4y48lZaVBJzioU37F6nNpq4aLOSy6Cyg__UfLup5L2edVBU" />
                             <span
-                                class="absolute top-4 left-4 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Popular</span>
+                                class="absolute top-4 left-4 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Populer</span>
                         </div>
                         <div class="p-6">
                             <h4 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Data Science
                             </h4>
-                            <p class="text-sm text-on-surface-variant mb-6">Master big data analytics and machine
-                                learning techniques from experts.</p>
+                            <p class="text-sm text-on-surface-variant mb-6">Kuasi analitik data besar dan teknik pembelajaran mesin dari para ahli.</p>
                             <div class="flex justify-between items-center pt-6 border-t border-surface-container">
                                 <span class="text-xs font-bold text-on-surface-variant flex items-center gap-1">
-                                    <span class="material-symbols-outlined text-sm">schedule</span> 12 Weeks
+                                    <span class="material-symbols-outlined text-sm">schedule</span> 12 Minggu
                                 </span>
-                                <span class="text-xs font-bold text-primary">Enroll Now</span>
+                                <span class="text-xs font-bold text-primary">Daftar Sekarang</span>
                             </div>
                         </div>
                     </div>
@@ -138,13 +135,12 @@
                         <div class="p-6">
                             <h4 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Digital
                                 Marketing</h4>
-                            <p class="text-sm text-on-surface-variant mb-6">Strategic growth hacking and brand
-                                management in the digital era.</p>
+                            <p class="text-sm text-on-surface-variant mb-6">Strategi pertumbuhan dan manajemen merek di era digital.</p>
                             <div class="flex justify-between items-center pt-6 border-t border-surface-container">
                                 <span class="text-xs font-bold text-on-surface-variant flex items-center gap-1">
-                                    <span class="material-symbols-outlined text-sm">schedule</span> 8 Weeks
+                                    <span class="material-symbols-outlined text-sm">schedule</span> 8 Minggu
                                 </span>
-                                <span class="text-xs font-bold text-primary">Enroll Now</span>
+                                <span class="text-xs font-bold text-primary">Daftar Sekarang</span>
                             </div>
                         </div>
                     </div>
@@ -159,13 +155,12 @@
                         <div class="p-6">
                             <h4 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
                                 Telecommunications</h4>
-                            <p class="text-sm text-on-surface-variant mb-6">Advanced network architecture and 5G
-                                technology implementation studies.</p>
+                            <p class="text-sm text-on-surface-variant mb-6">Arsitektur jaringan lanjut dan studi implementasi teknologi 5G.</p>
                             <div class="flex justify-between items-center pt-6 border-t border-surface-container">
                                 <span class="text-xs font-bold text-on-surface-variant flex items-center gap-1">
-                                    <span class="material-symbols-outlined text-sm">schedule</span> 15 Weeks
+                                    <span class="material-symbols-outlined text-sm">schedule</span> 15 Minggu
                                 </span>
-                                <span class="text-xs font-bold text-primary">Enroll Now</span>
+                                <span class="text-xs font-bold text-primary">Daftar Sekarang</span>
                             </div>
                         </div>
                     </div>
@@ -174,7 +169,7 @@
         </section>
         <!-- News Section (Editorial Layout) -->
         <section class="py-24 px-6 max-w-screen-2xl mx-auto">
-            <h2 class="text-4xl font-extrabold text-on-surface mb-12">Latest Updates</h2>
+            <h2 class="text-4xl font-extrabold text-on-surface mb-12">Pembaharuan Terbaru</h2>
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
                 <div class="lg:col-span-8">
                     <div class="relative rounded-[2.5rem] overflow-hidden group aspect-[21/9]">
@@ -184,30 +179,28 @@
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-10">
                             <span
-                                class="text-primary-fixed font-bold text-xs uppercase tracking-widest mb-4">Announcement</span>
+                                class="text-primary-fixed font-bold text-xs uppercase tracking-widest mb-4">Pengumuman</span>
                             <h3 class="text-3xl font-extrabold text-white mb-4 max-w-2xl">
                                 Fakultas Teknik universitas wiralodra akan membuka program studi teknik lingkungan mulai
                                 tahun ajaran baru
                             </h3>
-                            <button class="text-white text-sm font-bold flex items-center gap-2">Read Full Story <span
+                                <button class="text-white text-sm font-bold flex items-center gap-2">Baca Selengkapnya <span
                                     class="material-symbols-outlined text-sm">open_in_new</span></button>
                         </div>
                     </div>
                 </div>
                 <div class="lg:col-span-4 flex flex-col gap-8">
                     <div class="bg-surface-container-low p-6 rounded-3xl border-l-4 border-primary">
-                        <p class="text-xs font-bold text-primary mb-2">EVENTS</p>
-                        <h4 class="text-lg font-bold mb-2">Webinar: The Future of AI in Education</h4>
-                        <p class="text-sm text-on-surface-variant mb-4">Join our expert panel to discuss AI's impact on
-                            higher learning.</p>
+                        <p class="text-xs font-bold text-primary mb-2">ACARA</p>
+                        <h4 class="text-lg font-bold mb-2">Webinar: Masa Depan AI dalam Pendidikan</h4>
+                        <p class="text-sm text-on-surface-variant mb-4">Bergabunglah dengan panel ahli kami untuk membahas dampak AI pada pendidikan tinggi.</p>
                         <p class="text-xs font-medium text-on-surface-variant italic">October 24, 2024</p>
                     </div>
                     <div class="bg-surface-container-low p-6 rounded-3xl border-l-4 border-primary">
-                        <p class="text-xs font-bold text-primary mb-2">ACADEMIC</p>
-                        <h4 class="text-lg font-bold mb-2">Enrollment Open for Spring Semester 2025</h4>
-                        <p class="text-sm text-on-surface-variant mb-4">Application window is now open for all graduate
-                            and postgraduate programs.</p>
-                        <p class="text-xs font-medium text-on-surface-variant italic">Closing soon</p>
+                        <p class="text-xs font-bold text-primary mb-2">AKADEMIK</p>
+                        <h4 class="text-lg font-bold mb-2">Pendaftaran Dibuka untuk Semester Musim Semi 2025</h4>
+                        <p class="text-sm text-on-surface-variant mb-4">Pendaftaran kini dibuka untuk semua program sarjana dan pascasarjana.</p>
+                        <p class="text-xs font-medium text-on-surface-variant italic">Segera ditutup</p>
                     </div>
                 </div>
             </div>
@@ -216,10 +209,8 @@
         <section class="py-24 px-6 bg-surface-container-lowest">
             <div class="max-w-screen-2xl mx-auto">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-extrabold text-on-surface mb-4">Experience Seamless Digital Education</h2>
-                    <p class="text-on-surface-variant max-w-2xl mx-auto font-medium">Our Learning Management System is
-                        designed to provide an integrated and immersive academic experience for students and faculty
-                        alike.</p>
+                    <h2 class="text-4xl font-extrabold text-on-surface mb-4">Rasakan Pendidikan Digital Tanpa Hambatan</h2>
+                    <p class="text-on-surface-variant max-w-2xl mx-auto font-medium">Sistem Manajemen Pembelajaran kami dirancang untuk menyediakan pengalaman akademik terintegrasi dan imersif bagi mahasiswa dan dosen.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div
@@ -228,9 +219,8 @@
                             class="w-12 h-12 bg-primary-container rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                             <span class="material-symbols-outlined text-primary">hub</span>
                         </div>
-                        <h4 class="text-xl font-bold mb-3">Centralized Learning</h4>
-                        <p class="text-sm text-on-surface-variant leading-relaxed">Access all course materials,
-                            assignments, and grades in one place with our unified student dashboard.</p>
+                        <h4 class="text-xl font-bold mb-3">Pembelajaran Terpusat</h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Akses semua materi kursus, tugas, dan nilai di satu tempat melalui dasbor mahasiswa terpadu kami.</p>
                     </div>
                     <div
                         class="p-8 rounded-3xl border border-outline-variant/20 hover:border-primary/30 transition-all hover:bg-surface-container-low group">
@@ -238,9 +228,8 @@
                             class="w-12 h-12 bg-primary-container rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                             <span class="material-symbols-outlined text-primary">video_chat</span>
                         </div>
-                        <h4 class="text-xl font-bold mb-3">Interactive Classrooms</h4>
-                        <p class="text-sm text-on-surface-variant leading-relaxed">Participate in live lectures and
-                            engage seamlessly with peers and faculty through integrated virtual tools.</p>
+                        <h4 class="text-xl font-bold mb-3">Ruang Kelas Interaktif</h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Ikuti kuliah langsung dan berinteraksi lancar dengan rekan serta dosen melalui alat virtual terintegrasi.</p>
                     </div>
                     <div
                         class="p-8 rounded-3xl border border-outline-variant/20 hover:border-primary/30 transition-all hover:bg-surface-container-low group">
@@ -248,9 +237,8 @@
                             class="w-12 h-12 bg-primary-container rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                             <span class="material-symbols-outlined text-primary">analytics</span>
                         </div>
-                        <h4 class="text-xl font-bold mb-3">Progress Tracking</h4>
-                        <p class="text-sm text-on-surface-variant leading-relaxed">Monitor your academic journey with
-                            detailed analytics and real-time performance reports updated daily.</p>
+                        <h4 class="text-xl font-bold mb-3">Pelacakan Kemajuan</h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Pantau perjalanan akademik Anda dengan analitik terperinci dan laporan kinerja real-time yang diperbarui setiap hari.</p>
                     </div>
                     <div
                         class="p-8 rounded-3xl border border-outline-variant/20 hover:border-primary/30 transition-all hover:bg-surface-container-low group">
@@ -258,9 +246,8 @@
                             class="w-12 h-12 bg-primary-container rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                             <span class="material-symbols-outlined text-primary">smartphone</span>
                         </div>
-                        <h4 class="text-xl font-bold mb-3">Mobile Access</h4>
-                        <p class="text-sm text-on-surface-variant leading-relaxed">Learn on the go with our fully
-                            responsive mobile platform, optimized for any device you choose to use.</p>
+                        <h4 class="text-xl font-bold mb-3">Akses Mobile</h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Belajar kapan saja dengan platform mobile responsif kami, dioptimalkan untuk perangkat apa pun yang Anda gunakan.</p>
                     </div>
                 </div>
             </div>

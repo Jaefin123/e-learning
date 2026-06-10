@@ -2,7 +2,7 @@
      class="h-full w-64 fixed left-0 top-0 pt-20 bg-[#f3f4f5] flex flex-col z-40 border-r shadow-2xl transition-transform duration-300 ease-in-out -translate-x-full">
      <div class="px-8 mb-8">
          <h2 class="font-serif text-lg text-purple-950">Curator View</h2>
-         <p class="font-sans uppercase text-[10px] tracking-widest font-medium text-slate-500">Semester II, 2024</p>
+         <p class="font-sans uppercase text-[10px] tracking-widest font-medium text-slate-500">Semester III, 2026</p>
      </div>
      <nav class="flex flex-col h-full space-y-2 py-6 overflow-hidden">
          @if (Auth::user()->role == 'mahasiswa')

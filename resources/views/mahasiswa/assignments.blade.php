@@ -6,21 +6,21 @@
         <!-- Hero Section -->
         <section class="mb-16">
             <div class="flex items-baseline space-x-4">
-                <span class="text-xs font-bold tracking-[0.2em] text-primary uppercase">Academic Portfolio</span>
+                <span class="text-xs font-bold tracking-[0.2em] text-primary uppercase">Portfolio Akademik</span>
                 <div class="h-px flex-1 bg-gradient-to-r from-primary/20 to-transparent"></div>
             </div>
             <h1 class="font-display font-black text-6xl text-on-surface mt-4 editorial-title-offset tracking-tighter">
-                Assignments</h1>
+                Tugas</h1>
             <p class="font-body text-xl text-on-surface-variant mt-4 max-w-2xl leading-relaxed">
-                Track your intellectual progress and upcoming scholarly deadlines through this curated curriculum view.
+                Pantau kemajuan intelektual Anda dan tenggat waktu akademis yang akan datang melalui tampilan kurikulum yang dikurasi.
             </p>
         </section>
         <div class="grid grid-cols-12 gap-8">
             <!-- Upcoming Work Section (Editorial Bento Style) -->
             <div class="col-span-12 lg:col-span-8 space-y-8">
                 <div class="flex items-center justify-between">
-                    <h2 class="font-display font-bold text-3xl text-on-surface">Upcoming Work</h2>
-                    <button class="text-primary font-bold text-sm hover:underline">View Full Calendar</button>
+                    <h2 class="font-display font-bold text-3xl text-on-surface">Pekerjaan yang Akan Datang</h2>
+                    <button class="text-primary font-bold text-sm hover:underline">Lihat Kalender Penuh</button>
                 </div>
                 <div class="grid grid-cols-1 gap-6">
                     <!-- Card 1 -->
@@ -30,21 +30,19 @@
                             <div class="space-y-1">
                                 <div class="flex items-center space-x-2">
                                     <span
-                                        class="bg-secondary-container text-on-secondary-container px-2 py-0.5 text-[10px] font-bold tracking-widest uppercase rounded">In
-                                        Progress</span>
-                                    <span class="text-xs text-on-surface-variant font-medium">Philosophy 301</span>
+                                        class="bg-secondary-container text-on-secondary-container px-2 py-0.5 text-[10px] font-bold tracking-widest uppercase rounded">Sedang
+                                        Dikerjakan</span>
+                                    <span class="text-xs text-on-surface-variant font-medium">Artificial Intelligence</span>
                                 </div>
-                                <h3 class="font-body font-bold text-2xl group-hover:text-primary transition-colors">The
-                                    Ethics of AI: A Deontological Review</h3>
+                                <h3 class="font-body font-bold text-2xl group-hover:text-primary transition-colors">Etika Dalam Penggunaan AI</h3>
                             </div>
                             <div class="text-right">
-                                <span class="block text-xs font-bold text-error uppercase tracking-widest">Due in 2
-                                    days</span>
+                                <span class="block text-xs font-bold text-error uppercase tracking-widest">Jatuh Tempo dalam 2
+                                    Hari</span>
                                 <span class="text-xs text-on-surface-variant">Oct 24, 11:59 PM</span>
                             </div>
                         </div>
-                        <p class="font-body text-on-surface-variant line-clamp-2 mb-8">A comprehensive analysis of
-                            algorithmic decision-making frameworks within Kantian moral philosophy.</p>
+                        <p class="font-body text-on-surface-variant line-clamp-2 mb-8">Penerapan Etika dalam Penggunaan AI dan Teknologi.</p>
                         <div class="flex items-center justify-between">
                             <div class="flex -space-x-2">
                                 <div class="w-8 h-8 rounded-full border-2 border-white bg-slate-200 overflow-hidden"
@@ -65,7 +63,7 @@
                             </div>
                             <button
                                 class="bg-primary-container text-on-primary px-6 py-2.5 rounded-full font-bold text-sm tracking-tight shadow-lg shadow-primary/20 flex items-center space-x-2">
-                                <span>Continue Submission</span>
+                                <span>Lanjutkan Pengiriman</span>
                                 <span class="material-symbols-outlined text-lg"
                                     data-icon="arrow_forward">arrow_forward</span>
                             </button>
@@ -78,37 +76,35 @@
                             <div class="space-y-1">
                                 <div class="flex items-center space-x-2">
                                     <span
-                                        class="bg-tertiary-fixed text-on-tertiary-fixed px-2 py-0.5 text-[10px] font-bold tracking-widest uppercase rounded">Elective</span>
-                                    <span class="text-xs text-on-surface-variant font-medium">Modern Literature</span>
+                        class="bg-tertiary-fixed text-on-tertiary-fixed px-2 py-0.5 text-[10px] font-bold tracking-widest uppercase rounded">Pilihan</span>
+                                    <span class="text-xs text-on-surface-variant font-medium">Matematika Diskrit</span>
                                 </div>
-                                <h3 class="font-body font-bold text-2xl group-hover:text-primary transition-colors">
-                                    Post-Modern Narratives: The Unreliable Narrator</h3>
+                                <h3 class="font-body font-bold text-2xl group-hover:text-primary transition-colors">Penggunaan Teori Himpunan</h3>
                             </div>
                             <div class="text-right">
                                 <span
-                                    class="block text-xs font-bold text-on-surface-variant uppercase tracking-widest">Due
-                                    in 5 days</span>
+                                    class="block text-xs font-bold text-on-surface-variant uppercase tracking-widest">Jatuh
+                                    Tempo dalam 5 Hari</span>
                                 <span class="text-xs text-on-surface-variant">Oct 27, 11:59 PM</span>
                             </div>
                         </div>
-                        <p class="font-body text-on-surface-variant line-clamp-2 mb-8">Discussing the evolution of
-                            perspective in 20th-century literature with focus on Nabokov and Woolf.</p>
+                        <p class="font-body text-on-surface-variant line-clamp-2 mb-8">Analisis komprehensif tentang penerapan teori himpunan dalam pemecahan masalah matematika diskrit.</p>
                         <div class="flex items-center justify-between">
                             <div class="flex items-center text-on-surface-variant space-x-4">
                                 <div class="flex items-center space-x-1">
                                     <span class="material-symbols-outlined text-base"
                                         data-icon="attach_file">attach_file</span>
-                                    <span class="text-xs font-medium">3 Drafts</span>
+                                    <span class="text-xs font-medium">3 Draf</span>
                                 </div>
                                 <div class="flex items-center space-x-1">
                                     <span class="material-symbols-outlined text-base"
                                         data-icon="chat_bubble_outline">chat_bubble_outline</span>
-                                    <span class="text-xs font-medium">12 Comments</span>
+                                    <span class="text-xs font-medium">12 Komentar</span>
                                 </div>
                             </div>
                             <button
                                 class="bg-surface-container-high text-on-surface px-6 py-2.5 rounded-full font-bold text-sm tracking-tight flex items-center space-x-2">
-                                <span>Open Assignment</span>
+                                <span>Buka Tugas</span>
                             </button>
                         </div>
                     </div>
@@ -120,23 +116,23 @@
                 <section class="space-y-6">
                     <div class="flex items-baseline space-x-2">
                         <span class="w-2 h-2 rounded-full bg-secondary"></span>
-                        <h2 class="font-display font-bold text-xl text-on-surface">In Review</h2>
+                        <h2 class="font-display font-bold text-xl text-on-surface">Dalam Tinjauan</h2>
                     </div>
                     <div class="space-y-4">
                         <!-- Review Item 1 -->
                         <div class="bg-surface-container-low p-5 rounded-xl space-y-4">
                             <div class="flex justify-between items-start">
                                 <div class="space-y-0.5">
-                                    <h4 class="font-body font-bold text-sm">Advanced Calculus III</h4>
-                                    <p class="text-xs text-on-surface-variant">Problem Set #09 - Vector Fields</p>
+                                    <h4 class="font-body font-bold text-sm">Kalkulus Lanjutan III</h4>
+                                    <p class="text-xs text-on-surface-variant">Set Masalah #09 - Medan Vektor</p>
                                 </div>
                                 <span
-                                    class="text-[10px] font-bold text-secondary uppercase tracking-tighter bg-secondary-fixed px-2 py-0.5 rounded">Scoring</span>
+                                    class="text-[10px] font-bold text-secondary uppercase tracking-tighter bg-secondary-fixed px-2 py-0.5 rounded">Penilaian</span>
                             </div>
                             <div class="relative pt-1">
                                 <div class="flex mb-2 items-center justify-between">
                                     <div class="text-right">
-                                        <span class="text-xs font-bold inline-block text-primary">85% Processed</span>
+                                        <span class="text-xs font-bold inline-block text-primary">85% Diproses</span>
                                     </div>
                                 </div>
                                 <div class="overflow-hidden h-1.5 text-xs flex rounded bg-secondary-fixed">
@@ -149,16 +145,16 @@
                         <div class="bg-surface-container-low p-5 rounded-xl space-y-4">
                             <div class="flex justify-between items-start">
                                 <div class="space-y-0.5">
-                                    <h4 class="font-body font-bold text-sm">Political Theory</h4>
-                                    <p class="text-xs text-on-surface-variant">The Republic Critique</p>
+                                    <h4 class="font-body font-bold text-sm">Algoritma dan Struktur Data</h4>
+                                    <p class="text-xs text-on-surface-variant">Penerapan Algoritma Sorting</p>
                                 </div>
                                 <span
-                                    class="text-[10px] font-bold text-tertiary-container text-white uppercase tracking-tighter bg-tertiary px-2 py-0.5 rounded">Pending</span>
+                                    class="text-[10px] font-bold text-tertiary-container text-white uppercase tracking-tighter bg-tertiary px-2 py-0.5 rounded">Tertunda</span>
                             </div>
                             <div class="relative pt-1">
                                 <div class="flex mb-2 items-center justify-between">
                                     <div class="text-right">
-                                        <span class="text-xs font-bold inline-block text-primary">12% Processed</span>
+                                        <span class="text-xs font-bold inline-block text-primary">12% Diproses</span>
                                     </div>
                                 </div>
                                 <div class="overflow-hidden h-1.5 text-xs flex rounded bg-secondary-fixed">
@@ -173,7 +169,7 @@
                 <section class="space-y-6">
                     <div class="flex items-baseline space-x-2">
                         <span class="w-2 h-2 rounded-full bg-primary"></span>
-                        <h2 class="font-display font-bold text-xl text-on-surface">Recent Grades</h2>
+                        <h2 class="font-display font-bold text-xl text-on-surface">Nilai Terbaru</h2>
                     </div>
                     <div class="grid grid-cols-2 gap-4">
                         <!-- Grade Card 1 -->
@@ -182,7 +178,7 @@
                             <span class="text-3xl font-black text-primary">A</span>
                             <div class="space-y-0.5">
                                 <p class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">
-                                    Linguistics</p>
+                                    Pemrograman</p>
                                 <p class="text-xs font-medium text-slate-400">Oct 19</p>
                             </div>
                         </div>
@@ -192,7 +188,7 @@
                             <span class="text-3xl font-black text-primary">A-</span>
                             <div class="space-y-0.5">
                                 <p class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">
-                                    Economics</p>
+                                    Fisika 1</p>
                                 <p class="text-xs font-medium text-slate-400">Oct 17</p>
                             </div>
                         </div>
@@ -202,7 +198,7 @@
                             <span class="text-3xl font-black text-primary">B+</span>
                             <div class="space-y-0.5">
                                 <p class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">
-                                    Visual Arts</p>
+                                    Desain</p>
                                 <p class="text-xs font-medium text-slate-400">Oct 15</p>
                             </div>
                         </div>
@@ -213,8 +209,8 @@
                                 <span class="material-symbols-outlined text-slate-400"
                                     data-icon="more_horiz">more_horiz</span>
                             </div>
-                            <p class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Full
-                                Report</p>
+                            <p class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Laporan
+                                Lengkap</p>
                         </div>
                     </div>
                 </section>
@@ -225,13 +221,13 @@
             <div class="bg-gradient-to-br from-primary to-primary-container p-12 rounded-3xl relative overflow-hidden">
                 <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div class="space-y-6">
-                        <h2 class="font-display font-black text-4xl text-on-primary leading-tight">Master your academic
-                            journey through focus.</h2>
-                        <p class="text-on-primary/80 font-body text-lg leading-relaxed">Join the curated seminar on
-                            "Metacognitive Study Strategies" this Friday to optimize your learning workflow.</p>
+                        <h2 class="font-display font-black text-4xl text-on-primary leading-tight">Kuasai perjalanan akademik
+                            Anda melalui fokus.</h2>
+                        <p class="text-on-primary/80 font-body text-lg leading-relaxed">Bergabunglah dengan seminar yang dikurasi tentang
+                            "Strategi Belajar Metakognisi" hari Jumat ini untuk mengoptimalkan alur kerja belajar Anda.</p>
                         <button
-                            class="bg-white text-primary px-8 py-3.5 rounded-full font-bold tracking-tight shadow-xl hover:scale-105 transition-transform">Reserve
-                            Your Seat</button>
+                            class="bg-white text-primary px-8 py-3.5 rounded-full font-bold tracking-tight shadow-xl hover:scale-105 transition-transform">Pesan
+                            Tempat Anda</button>
                     </div>
                     <div class="hidden md:block relative">
                         <img alt="Learning context" class="rounded-2xl shadow-2xl rotate-3"

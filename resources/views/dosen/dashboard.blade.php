@@ -3,17 +3,17 @@
 <main class="min-h-screen">
     <section class="p-12 max-w-7xl mx-auto space-y-12">
         <header class="flex flex-col gap-2">
-            <span class="font-sans uppercase tracking-[0.2em] text-[11px] font-extrabold text-primary">Academic
-                Excellence</span>
-            <h2 class="font-sans text-5xl font-extrabold tracking-tight text-on-surface">Good Morning, <span
+            <span class="font-sans uppercase tracking-[0.2em] text-[11px] font-extrabold text-primary">Keunggulan
+                Akademik</span>
+            <h2 class="font-sans text-5xl font-extrabold tracking-tight text-on-surface">Selamat Pagi, <span
                     class="font-serif italic font-normal text-primary">{{ ucfirst(auth()->user()->name) }}.</span></h2>
-            <p class="font-body text-slate-600 text-lg max-w-2xl mt-4">Welcome back to your curriculum hub. You have 12
-                pending submissions across 3 active courses this morning.</p>
+            <p class="font-body text-slate-600 text-lg max-w-2xl mt-4">Selamat datang kembali di pusat kurikulum Anda.
+                Pagi ini ada 12 tugas yang menunggu penilaian dari 3 mata kuliah aktif.</p>
         </header>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div
                 class="bg-surface-container-lowest p-8 rounded-xl shadow-[0px_12px_32px_rgba(45,0,79,0.06)] group hover:bg-primary-fixed transition-colors duration-300">
-                <p class="font-sans uppercase tracking-widest text-[10px] font-bold text-slate-500 mb-2">Total Students
+                <p class="font-sans uppercase tracking-widest text-[10px] font-bold text-slate-500 mb-2">Total Mahasiswa
                 </p>
                 <div class="flex items-end justify-between">
                     <span class="font-sans text-4xl font-bold text-on-surface">124</span>
@@ -23,7 +23,7 @@
             </div>
             <div
                 class="bg-surface-container-lowest p-8 rounded-xl shadow-[0px_12px_32px_rgba(45,0,79,0.06)] group hover:bg-primary-fixed transition-colors duration-300">
-                <p class="font-sans uppercase tracking-widest text-[10px] font-bold text-slate-500 mb-2">Courses Taught
+                <p class="font-sans uppercase tracking-widest text-[10px] font-bold text-slate-500 mb-2">Mata Kuliah Diampu
                 </p>
                 <div class="flex items-end justify-between">
                     <span class="font-sans text-4xl font-bold text-on-surface">3</span>
@@ -33,7 +33,7 @@
             </div>
             <div
                 class="bg-surface-container-lowest p-8 rounded-xl shadow-[0px_12px_32px_rgba(45,0,79,0.06)] group hover:bg-primary-fixed transition-colors duration-300">
-                <p class="font-sans uppercase tracking-widest text-[10px] font-bold text-slate-500 mb-2">Research Papers
+                <p class="font-sans uppercase tracking-widest text-[10px] font-bold text-slate-500 mb-2">Publikasi Riset
                 </p>
                 <div class="flex items-end justify-between">
                     <span class="font-sans text-4xl font-bold text-on-surface">8</span>
@@ -46,35 +46,35 @@
             <div class="lg:col-span-2 space-y-12">
                 <div class="space-y-6">
                     <div class="flex justify-between items-end">
-                        <h3 class="font-serif text-2xl text-on-surface">Course Management</h3>
+                        <h3 class="font-serif text-2xl text-on-surface">Manajemen Mata Kuliah</h3>
                         <button
-                            class="font-sans text-xs font-bold text-primary uppercase tracking-widest border-b-2 border-primary/20 pb-1">View
-                            Schedule</button>
+                            class="font-sans text-xs font-bold text-primary uppercase tracking-widest border-b-2 border-primary/20 pb-1">Lihat
+                            Jadwal</button>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div
                             class="bg-surface-container-lowest overflow-hidden rounded-xl shadow-[0px_12px_32px_rgba(45,0,79,0.06)] flex flex-col hover:translate-y-[-4px] transition-transform duration-300">
                             <div class="h-32 bg-slate-200 relative">
-                                <img alt="Modern Architecture" class="w-full h-full object-cover opacity-80"
-                                    data-alt="Black and white architectural detail of a modernist concrete building with sharp angles and dramatic shadows"
+                                <img alt="Pemrograman Dasar" class="w-full h-full object-cover opacity-80"
+                                    data-alt="Mahasiswa Teknik Komputer sedang menulis kode program di layar laptop"
                                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuCv4BOHPjPH6XKo3f-rDbNgjUu7iSpMi_9LlC_87OiXHmYnaTDWthkjAJP0CXaaz7vQK8ybFYjnmRsCrPDzVLxkRSSULqtgqUAKeS0x-5UCs6E_aaOXug2eb6dXHAvU9rTnc4DV9Z5idt1DegyV4N7H8hazETfphzRfe9S9sEvSihwBXXF-saBk6chsa_zaLBSC-BbI2dLCHeDTx6W8ytenBD_-QMqAGBreFg1lHFEJmYBDKBbO4jLsGINODApAe-t7j55ovfDy6fQ" />
                                 <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
                                 <div class="absolute bottom-4 left-6">
                                     <span
-                                        class="bg-white/20 backdrop-blur-md text-white text-[10px] px-2 py-1 rounded font-sans uppercase tracking-wider">ARCH-402</span>
+                                        class="bg-white/20 backdrop-blur-md text-white text-[10px] px-2 py-1 rounded font-sans uppercase tracking-wider">TK-101</span>
                                 </div>
                             </div>
                             <div class="p-6 space-y-4">
-                                <h4 class="font-serif text-lg leading-snug">Modernist Architectural Theory</h4>
+                                <h4 class="font-serif text-lg leading-snug">Pemrograman Dasar</h4>
                                 <div class="flex items-center gap-6">
                                     <div class="flex items-center gap-2">
                                         <span class="material-symbols-outlined text-sm text-slate-400">group</span>
-                                        <span class="font-sans text-xs text-slate-600">42 Students</span>
+                                        <span class="font-sans text-xs text-slate-600">42 Mahasiswa</span>
                                     </div>
                                     <div class="flex items-center gap-2">
                                         <span
                                             class="material-symbols-outlined text-sm text-primary">pending_actions</span>
-                                        <span class="font-sans text-xs text-primary font-bold">3 To Grade</span>
+                                        <span class="font-sans text-xs text-primary font-bold">3 Perlu Dinilai</span>
                                     </div>
                                 </div>
                                 <div class="w-full bg-secondary-fixed h-1 rounded-full overflow-hidden">
@@ -85,26 +85,26 @@
                         <div
                             class="bg-surface-container-lowest overflow-hidden rounded-xl shadow-[0px_12px_32px_rgba(45,0,79,0.06)] flex flex-col hover:translate-y-[-4px] transition-transform duration-300">
                             <div class="h-32 bg-slate-200 relative">
-                                <img alt="Comparative Literature" class="w-full h-full object-cover opacity-80"
-                                    data-alt="A stack of vintage hardback books in a sunlit library with dust motes dancing in the light"
+                                <img alt="Algoritma dan Struktur Data" class="w-full h-full object-cover opacity-80"
+                                    data-alt="Diagram algoritma dan struktur data di papan tulis ruang laboratorium komputer"
                                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIdLKgNS24CnR0yAepaWtqmvGsZw9B1dKPtmIwpBLH_TSt7AGEzFVtSb7IKEtWuxYwAYejDdwBgeRh47GSh1W5say815zTsv4Xj5NYxGKDlxxXpElZ4n-Kcdb69IIkBrk7xIRPzsgt1e8Y6ZUL8qKZ0ImO1AXcA2401NLF5VKNGolEVdPqhtBFFYdil9BdWkYYptx3PtmNyAMb-uiqwLwluvDCIkqNn0ZdBdsS4PmN7YheT895t6yBHqMHhFXIjNHQ1jD6oOfidu0" />
                                 <div class="absolute inset-0 bg-gradient-to-t from-secondary/80 to-transparent"></div>
                                 <div class="absolute bottom-4 left-6">
                                     <span
-                                        class="bg-white/20 backdrop-blur-md text-white text-[10px] px-2 py-1 rounded font-sans uppercase tracking-wider">LIT-301</span>
+                                        class="bg-white/20 backdrop-blur-md text-white text-[10px] px-2 py-1 rounded font-sans uppercase tracking-wider">TK-203</span>
                                 </div>
                             </div>
                             <div class="p-6 space-y-4">
-                                <h4 class="font-serif text-lg leading-snug">Comparative Literature</h4>
+                                <h4 class="font-serif text-lg leading-snug">Algoritma dan Struktur Data</h4>
                                 <div class="flex items-center gap-6">
                                     <div class="flex items-center gap-2">
                                         <span class="material-symbols-outlined text-sm text-slate-400">group</span>
-                                        <span class="font-sans text-xs text-slate-600">38 Students</span>
+                                        <span class="font-sans text-xs text-slate-600">38 Mahasiswa</span>
                                     </div>
                                     <div class="flex items-center gap-2">
                                         <span
                                             class="material-symbols-outlined text-sm text-green-600">check_circle</span>
-                                        <span class="font-sans text-xs text-green-600 font-bold">All Graded</span>
+                                        <span class="font-sans text-xs text-green-600 font-bold">Semua Dinilai</span>
                                     </div>
                                 </div>
                                 <div class="w-full bg-secondary-fixed h-1 rounded-full overflow-hidden">
@@ -116,7 +116,7 @@
                 </div>
                 <div class="bg-surface-container-low p-8 rounded-2xl space-y-8">
                     <div class="flex justify-between items-center">
-                        <h3 class="font-serif text-2xl text-on-surface">Recent Submissions</h3>
+                        <h3 class="font-serif text-2xl text-on-surface">Pengumpulan Terbaru</h3>
                         <button class="text-primary hover:bg-primary-fixed p-2 rounded-full transition-colors">
                             <span class="material-symbols-outlined">more_horiz</span>
                         </button>
@@ -129,15 +129,14 @@
                                     class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center font-sans text-sm font-bold text-slate-600">
                                     EL</div>
                                 <div>
-                                    <p class="font-sans text-sm font-bold text-on-surface">The Bauhaus Influence</p>
-                                    <p class="font-sans text-[10px] text-slate-500 uppercase tracking-wider">Elias
-                                        Lynch • Modernist Theory</p>
+                                    <p class="font-sans text-sm font-bold text-on-surface">Implementasi Program Kalkulator Sederhana</p>
+                                    <p class="font-sans text-[10px] text-slate-500 uppercase tracking-wider">Ahmad - Pemrograman Dasar</p>
                                 </div>
                             </div>
                             <div class="flex items-center gap-6">
-                                <span class="font-sans text-[10px] text-slate-400">2 hours ago</span>
+                                <span class="font-sans text-[10px] text-slate-400">2 jam lalu</span>
                                 <button
-                                    class="bg-primary text-white text-[10px] px-4 py-2 rounded-full font-bold uppercase tracking-widest shadow-lg shadow-primary/20 hover:scale-105 transition-transform">Grade</button>
+                                    class="bg-primary text-white text-[10px] px-4 py-2 rounded-full font-bold uppercase tracking-widest shadow-lg shadow-primary/20 hover:scale-105 transition-transform">Nilai</button>
                             </div>
                         </div>
                         <div
@@ -147,16 +146,15 @@
                                     class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center font-sans text-sm font-bold text-slate-600">
                                     SK</div>
                                 <div>
-                                    <p class="font-sans text-sm font-bold text-on-surface">Streamline Moderne and
-                                        Social Class</p>
-                                    <p class="font-sans text-[10px] text-slate-500 uppercase tracking-wider">Sienna Kim
-                                        • Modernist Theory</p>
+                                    <p class="font-sans text-sm font-bold text-on-surface">Analisis Kompleksitas Sorting</p>
+                                    <p class="font-sans text-[10px] text-slate-500 uppercase tracking-wider">Joko
+                                        - Algoritma dan Struktur Data</p>
                                 </div>
                             </div>
                             <div class="flex items-center gap-6">
-                                <span class="font-sans text-[10px] text-slate-400">5 hours ago</span>
+                                <span class="font-sans text-[10px] text-slate-400">5 jam lalu</span>
                                 <button
-                                    class="bg-primary text-white text-[10px] px-4 py-2 rounded-full font-bold uppercase tracking-widest shadow-lg shadow-primary/20 hover:scale-105 transition-transform">Grade</button>
+                                    class="bg-primary text-white text-[10px] px-4 py-2 rounded-full font-bold uppercase tracking-widest shadow-lg shadow-primary/20 hover:scale-105 transition-transform">Nilai</button>
                             </div>
                         </div>
                         <div
@@ -166,16 +164,14 @@
                                     class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center font-sans text-sm font-bold text-slate-600">
                                     JB</div>
                                 <div>
-                                    <p class="font-sans text-sm font-bold text-on-surface">Constructivism in Soviet
-                                        Architecture</p>
-                                    <p class="font-sans text-[10px] text-slate-500 uppercase tracking-wider">Julian
-                                        Bell • Modernist Theory</p>
+                                    <p class="font-sans text-sm font-bold text-on-surface">Pembuktian Relasi pada Matematika Diskrit</p>
+                                    <p class="font-sans text-[10px] text-slate-500 uppercase tracking-wider">Budi - Matematika Diskrit</p>
                                 </div>
                             </div>
                             <div class="flex items-center gap-6">
-                                <span class="font-sans text-[10px] text-slate-400">Yesterday</span>
+                                <span class="font-sans text-[10px] text-slate-400">Kemarin</span>
                                 <button
-                                    class="bg-primary text-white text-[10px] px-4 py-2 rounded-full font-bold uppercase tracking-widest shadow-lg shadow-primary/20 hover:scale-105 transition-transform">Grade</button>
+                                    class="bg-primary text-white text-[10px] px-4 py-2 rounded-full font-bold uppercase tracking-widest shadow-lg shadow-primary/20 hover:scale-105 transition-transform">Nilai</button>
                             </div>
                         </div>
                     </div>
@@ -184,40 +180,40 @@
             <div class="space-y-12">
                 <div class="bg-primary rounded-3xl p-8 text-white relative overflow-hidden shadow-2xl">
                     <div class="relative z-10 space-y-6">
-                        <h3 class="font-serif text-2xl">Research &amp; Grants</h3>
+                        <h3 class="font-serif text-2xl">Riset &amp; Hibah</h3>
                         <div class="space-y-4">
                             <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl space-y-2 border border-white/10">
                                 <div class="flex justify-between items-start">
                                     <span
-                                        class="font-sans text-[10px] font-bold uppercase tracking-widest text-primary-fixed">NSF
-                                        Research Grant</span>
+                                        class="font-sans text-[10px] font-bold uppercase tracking-widest text-primary-fixed">Hibah
+                                        Riset Kampus</span>
                                     <span
-                                        class="bg-error text-white text-[9px] px-2 py-0.5 rounded font-bold">URGENT</span>
+                                        class="bg-error text-white text-[9px] px-2 py-0.5 rounded font-bold">MENDESAK</span>
                                 </div>
-                                <p class="font-body text-sm font-medium">Urban Sociology Symposium Proposal</p>
+                                <p class="font-body text-sm font-medium">Proposal Sistem Monitoring IoT Laboratorium</p>
                                 <div class="flex items-center gap-2 mt-2">
                                     <span class="material-symbols-outlined text-sm">calendar_today</span>
-                                    <span class="font-sans text-[10px] uppercase tracking-wider">Deadline: Oct 14,
+                                    <span class="font-sans text-[10px] uppercase tracking-wider">Tenggat: 14 Okt
                                         2023</span>
                                 </div>
                             </div>
                             <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl space-y-2 border border-white/10">
                                 <div class="flex justify-between items-start">
                                     <span
-                                        class="font-sans text-[10px] font-bold uppercase tracking-widest text-primary-fixed">University
-                                        Endowment</span>
+                                        class="font-sans text-[10px] font-bold uppercase tracking-widest text-primary-fixed">Dana
+                                        Pengembangan Universitas</span>
                                 </div>
-                                <p class="font-body text-sm font-medium">Digital Humanities Lab Funding</p>
+                                <p class="font-body text-sm font-medium">Pendanaan Lab Embedded System</p>
                                 <div class="flex items-center gap-2 mt-2">
                                     <span class="material-symbols-outlined text-sm">calendar_today</span>
-                                    <span class="font-sans text-[10px] uppercase tracking-wider">Deadline: Nov 02,
+                                    <span class="font-sans text-[10px] uppercase tracking-wider">Tenggat: 02 Nov
                                         2023</span>
                                 </div>
                             </div>
                         </div>
                         <button
-                            class="w-full bg-white text-primary font-sans text-xs font-bold uppercase tracking-widest py-3 rounded-xl hover:bg-primary-fixed transition-colors">Submit
-                            New Proposal</button>
+                            class="w-full bg-white text-primary font-sans text-xs font-bold uppercase tracking-widest py-3 rounded-xl hover:bg-primary-fixed transition-colors">Ajukan
+                            Proposal Baru</button>
                     </div>
                     <div
                         class="absolute -bottom-12 -right-12 w-48 h-48 bg-primary-container rounded-full blur-3xl opacity-50">
@@ -228,17 +224,17 @@
                 </div>
                 <div
                     class="bg-surface-container-lowest p-8 rounded-2xl shadow-[0px_12px_32px_rgba(45,0,79,0.06)] space-y-6">
-                    <h3 class="font-serif text-xl text-on-surface">Faculty Notices</h3>
+                    <h3 class="font-serif text-xl text-on-surface">Pengumuman Dosen</h3>
                     <div class="space-y-4">
                         <div class="flex gap-4 items-start">
                             <div class="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                            <p class="font-sans text-xs leading-relaxed text-slate-600">Department meeting moved to
-                                <span class="font-bold text-on-surface">Room 402</span> this Thursday.</p>
+                            <p class="font-sans text-xs leading-relaxed text-slate-600">Rapat jurusan dipindahkan ke
+                                <span class="font-bold text-on-surface">Ruang 402</span> Kamis ini.</p>
                         </div>
                         <div class="flex gap-4 items-start">
                             <div class="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                            <p class="font-sans text-xs leading-relaxed text-slate-600">Sabbatical applications for
-                                Spring 2024 are now <span class="font-bold text-on-surface">open</span>.</p>
+                            <p class="font-sans text-xs leading-relaxed text-slate-600">Pendaftaran pelatihan dosen
+                                semester depan sudah <span class="font-bold text-on-surface">dibuka</span>.</p>
                         </div>
                     </div>
                 </div>
