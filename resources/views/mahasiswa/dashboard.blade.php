@@ -211,8 +211,7 @@
                 <div class="absolute bottom-0 p-8 text-white">
                     <span class="font-label text-[10px] font-bold uppercase tracking-[0.3em] mb-4 block">Sumber Baru Telah Tersedia</span>
                     <h4 class="serif-text text-2xl font-bold mb-4 italic">Jurnal Teknologi Komputer</h4>
-                    <p class="text-sm text-purple-100 mb-6 font-light">Issue 42: Sustainability and Memory in
-                        post-industrial landscapes.</p>
+                    <p class="text-sm text-purple-100 mb-6 font-light">Issue 40: Advances in Artificial Intelligence.</p>
                     <button
                         class="bg-white text-primary px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-purple-100 transition-colors">
                         Read Publication
