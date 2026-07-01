@@ -48,11 +48,11 @@ Route::get('admin/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('admin.dashboard');
 
 // ========================================================= semua user yg login ====================================================
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+// Route::middleware('auth')->group(function () {
+//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// });
 
 // ================================================ hanya mahasiswa yg akses ====================================================
 Route::middleware(['auth', 'role:mahasiswa'])->prefix('mahasiswa')->group(function () {
@@ -93,6 +93,18 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
         return view('admin.usermanagement', compact('page'));
     })->name('usermanagementadmin');
 
+});
+
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile-saya', function () {
+        $page = 'page-profile';
+        return view('profile', compact('page'));
+    })->name('profile.saya');
+
+     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 
