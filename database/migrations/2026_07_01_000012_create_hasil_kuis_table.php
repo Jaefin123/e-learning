@@ -11,14 +11,14 @@ return new class extends Migration
         Schema::create('hasil_kuis', function (Blueprint $table) {
             $table->string('id_hasil')->primary();
             $table->string('id_kuis');
-            $table->string('npm');
+            $table->uuid('id_mahasiswa');
             $table->dateTime('start_at')->nullable();
             $table->dateTime('submitted_at')->nullable();
             $table->integer('total_score')->nullable();
             $table->timestamps();
 
             $table->foreign('id_kuis')->references('id_kuis')->on('kuis')->cascadeOnDelete();
-            $table->foreign('npm')->references('npm')->on('users')->cascadeOnDelete();
+            $table->foreign('id_mahasiswa')->references('id_user')->on('users')->nullOnDelete();
         });
     }
 

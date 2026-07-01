@@ -8,14 +8,14 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('admins', function (Blueprint $table) {
-            $table->string('id_admin')->primary();
-            $table->unsignedBigInteger('id_user');
-            $table->string('nip')->unique();
+        Schema::create('admin', function (Blueprint $table) {
+            $table->string('nip')->primary();
+            $table->uuid('id_user');
+            $table->text('foto_profile')->nullable();
             $table->string('jabatan')->nullable();
             $table->timestamps();
 
-            $table->foreign('id_user')->references('id')->on('users')->cascadeOnDelete();
+            $table->foreign('id_user')->references('id_user')->on('users')->nullOnDelete();
         });
     }
 

@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('kuis', function (Blueprint $table) {
             $table->string('id_kuis')->primary();
-            $table->string('id_dosen');
+            $table->uuid('id_dosen');
             $table->string('id_matkul');
             $table->string('judul');
             $table->text('deskripsi')->nullable();
@@ -19,8 +19,8 @@ return new class extends Migration
             $table->integer('durasi')->nullable();
             $table->timestamps();
 
-            $table->foreign('id_dosen')->references('id_dosen')->on('dosens')->cascadeOnDelete();
-            $table->foreign('id_matkul')->references('id_matkul')->on('matkuls')->cascadeOnDelete();
+            $table->foreign('id_dosen')->references('id_user')->on('users')->nullOnDelete();
+            $table->foreign('id_matkul')->references('id_matkul')->on('matkuls')->nullOnDelete();
         });
     }
 

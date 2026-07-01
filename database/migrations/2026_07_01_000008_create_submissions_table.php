@@ -11,14 +11,14 @@ return new class extends Migration
         Schema::create('submissions', function (Blueprint $table) {
             $table->string('id_submission')->primary();
             $table->string('id_assignment');
-            $table->string('npm');
+            $table->uuid('id_mahasiswa');
             $table->string('lampiran_tugas')->nullable();
             $table->string('nilai')->nullable();
             $table->text('comment')->nullable();
             $table->timestamps();
 
-            $table->foreign('id_assignment')->references('id_assignment')->on('assignments')->cascadeOnDelete();
-            $table->foreign('npm')->references('npm')->on('users')->cascadeOnDelete();
+            $table->foreign('id_assignment')->references('id_assignment')->on('assignments')->nullOnDelete();
+            $table->foreign('id_mahasiswa')->references('id_user')->on('users')->nullOnDelete();
         });
     }
 

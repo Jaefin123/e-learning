@@ -16,8 +16,8 @@ return new class extends Migration
             $table->float('score')->nullable();
             $table->timestamps();
 
-            $table->foreign('id_hasil')->references('id_hasil')->on('hasil_kuis')->cascadeOnDelete();
-            $table->foreign('id_soal')->references('id_soal')->on('soals')->cascadeOnDelete();
+            $table->foreign('id_hasil')->references('id_hasil')->on('hasil_kuis')->nullOnDelete();
+            $table->foreign('id_soal')->references('id_soal')->on('soals')->nullOnDelete();
         });
     }
 

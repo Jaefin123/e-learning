@@ -8,16 +8,16 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('mahasiswas', function (Blueprint $table) {
-            $table->string('id_mahasiswa')->primary();
-            $table->unsignedBigInteger('id_user');
-            $table->string('npm')->unique();
+        Schema::create('mahasiswa', function (Blueprint $table) {
+            $table->string('npm')->primary();
+            $table->uuid('id_user');
+            $table->text('foto_profile')->nullable();
             $table->string('tahun_masuk')->nullable();
             $table->string('semester')->nullable();
             $table->string('prodi')->nullable();
             $table->timestamps();
 
-            $table->foreign('id_user')->references('id')->on('users')->cascadeOnDelete();
+            $table->foreign('id_user')->references('id_user')->on('users')->nullOnDelete();
         });
     }
 

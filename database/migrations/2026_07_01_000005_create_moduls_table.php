@@ -15,7 +15,7 @@ return new class extends Migration
             $table->string('file_modul')->nullable();
             $table->timestamps();
 
-            $table->foreign('id_matkul')->references('id_matkul')->on('matkuls')->cascadeOnDelete();
+            $table->foreign('id_matkul')->references('id_matkul')->on('matkuls')->nullOnDelete();
         });
     }
 

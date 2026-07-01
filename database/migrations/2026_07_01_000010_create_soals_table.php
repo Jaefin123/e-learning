@@ -16,7 +16,7 @@ return new class extends Migration
             $table->integer('score')->nullable();
             $table->timestamps();
 
-            $table->foreign('id_kuis')->references('id_kuis')->on('kuis')->cascadeOnDelete();
+            $table->foreign('id_kuis')->references('id_kuis')->on('kuis')->nullOnDelete();
         });
     }
 

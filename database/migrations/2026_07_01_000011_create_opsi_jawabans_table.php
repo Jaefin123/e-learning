@@ -15,7 +15,7 @@ return new class extends Migration
             $table->boolean('is_correct')->default(false);
             $table->timestamps();
 
-            $table->foreign('id_soal')->references('id_soal')->on('soals')->cascadeOnDelete();
+            $table->foreign('id_soal')->references('id_soal')->on('soals')->nullOnDelete();
         });
     }
 

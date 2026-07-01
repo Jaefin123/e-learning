@@ -11,15 +11,15 @@ return new class extends Migration
         Schema::create('enrolls', function (Blueprint $table) {
             $table->string('id_enroll')->primary();
             $table->string('id_matkul');
-            $table->string('npm');
-            $table->string('id_dosen')->nullable();
-            $table->string('id_admin')->nullable();
+            $table->uuid('id_mahasiswa');
+            $table->uuid('id_dosen')->nullable();
+            $table->uuid('id_admin')->nullable();
             $table->timestamps();
 
-            $table->foreign('id_matkul')->references('id_matkul')->on('matkuls')->cascadeOnDelete();
-            $table->foreign('npm')->references('npm')->on('mahasiswas')->cascadeOnDelete();
-            $table->foreign('id_dosen')->references('id_dosen')->on('dosens')->nullOnDelete();
-            $table->foreign('id_admin')->references('id_admin')->on('admins')->nullOnDelete();
+            $table->foreign('id_matkul')->references('id_matkul')->on('matkuls')->nullOnDelete();
+            $table->foreign('id_mahasiswa')->references('id_user')->on('users')->nullOnDelete();
+            $table->foreign('id_dosen')->references('id_user')->on('users')->nullOnDelete();
+            $table->foreign('id_admin')->references('id_user')->on('users')->nullOnDelete();
         });
     }
 
