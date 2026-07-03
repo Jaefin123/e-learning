@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\mahasiswa\AssignmentsController;
 use App\Http\Controllers\mahasiswa\GradesController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Admin\UserManagementController;
 
 Route::get('/', function () {
     return view('guest.landingpage');
@@ -88,10 +89,11 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
         return view('admin.coursemanagement', compact('page'));
     })->name('coursemanagementadmin');
     
-    Route::get('/user-management', function () {
-        $page = 'page-usermanagement';
-        return view('admin.usermanagement', compact('page'));
-    })->name('usermanagementadmin');
+    // page user management
+    Route::get('/user-management', [UserManagementController::class, 'pageUserManagement'])->name('usermanagementadmin');
+    Route::get('/user-management/filter/role', [UserManagementController::class, 'filterRole'])->name('usermanagementadmin.filter.role');
+    Route::get('/user-management/filter/search', [UserManagementController::class, 'filterSearch'])->name('usermanagementadmin.filter.search');
+    Route::post('/user-management/create-akun', [UserManagementController::class, 'createAkun'])->name('usermanagementadmin.create.akun');
 
 });
 
