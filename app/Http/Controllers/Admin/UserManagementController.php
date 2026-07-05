@@ -177,7 +177,7 @@ class UserManagementController extends Controller
 
             try {
                 DB::beginTransaction();
-                
+
                 DB::table('users')->insert([
                     'id_user' => $id_user,
                     'name' => $request->name,
@@ -204,5 +204,41 @@ class UserManagementController extends Controller
                 return back()->with(['gagal' => 'Terjadi kesalahan saat membuat akun admin.']);
             }
         }
+    }
+
+    // handle delete akun
+    public function deleteAkun($id)
+    {
+        try {
+            if (DB::table('mahasiswa')->where('id_user', $id)->exists()) {
+                DB::table('mahasiswa')->where('id_user', $id)->delete();
+                DB::table('users')->where('id_user', $id)->delete();
+                return back()->with(['berhasil' => 'Akun mahasiswa berhasil dihapus.']);
+            } elseif (DB::table('dosen')->where('id_user', $id)->exists()) {
+                DB::table('dosen')->where('id_user', $id)->delete();
+                DB::table('users')->where('id_user', $id)->delete();
+                return back()->with(['berhasil' => 'Akun dosen berhasil dihapus.']);
+            } else {
+                DB::table('admin')->where('id_user', $id)->delete();
+                DB::table('users')->where('id_user', $id)->delete();
+                return back()->with(['berhasil' => 'Akun admin berhasil dihapus.']);
+            }
+        } catch (\Throwable $th) {
+            //throw $th;
+            return back()->with(['gagal' => 'Terjadi kesalahan saat mengambil data akun.']);
+        }
+    }
+
+    // page detail profil user management
+    public function detailProfil($id)
+    {
+        $idAsli = decrypt($id); 
+
+        $user = $this->userManagementService->getOneUsersbyId($idAsli);
+        // dd($user); // Debugging: Check the retrieved user data
+
+        $page = 'page-detailprofil';
+
+        return view('profile', compact('page', 'user'));
     }
 }

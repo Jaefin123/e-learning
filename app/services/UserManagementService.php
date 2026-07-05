@@ -14,6 +14,7 @@ class UserManagementService
             ->leftJoin('admin', 'users.id_user', '=', 'admin.id_user')
             ->leftJoin('mahasiswa', 'users.id_user', '=', 'mahasiswa.id_user')
             ->select(
+                'users.id_user',
                 'users.name',
                 'users.email',
                 'users.role',
@@ -42,6 +43,32 @@ class UserManagementService
         return $Users;
     }
 
+    // ambil data satu user byid
+    public function getOneUsersbyId($id)
+    {
+        $Users = DB::table('users')
+            ->leftJoin('dosen', 'users.id_user', '=', 'dosen.id_user')
+            ->leftJoin('admin', 'users.id_user', '=', 'admin.id_user')
+            ->leftJoin('mahasiswa', 'users.id_user', '=', 'mahasiswa.id_user')
+            ->select(
+                'users.id_user',
+                'users.name',
+                'users.email',
+                'users.role',
+                'dosen.gelar_depan',
+                'dosen.gelar_belakang',
+                DB::raw("COALESCE(dosen.nidn, admin.nip, mahasiswa.npm) as kode_ref"),
+                DB::raw("COALESCE(dosen.foto_profile, admin.foto_profile, mahasiswa.foto_profile) as profile"),
+                DB::raw("COALESCE(dosen.prodi, mahasiswa.prodi) as prodi"),
+                DB::raw("COALESCE(mahasiswa.tahun_masuk) as tahun_masuk"),
+                DB::raw("COALESCE(mahasiswa.semester) as semester"),
+                DB::raw("COALESCE(dosen.jabatan, admin.jabatan) as jabatan"),
+            )
+            ->where('users.id_user', $id)
+            ->first();
+
+        return $Users;
+    }
     // ambil total user
     public function getTotalUser(){
         $totalUsers = DB::table('users')->count();

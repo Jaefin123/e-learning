@@ -7,6 +7,7 @@ use App\Http\Controllers\mahasiswa\AssignmentsController;
 use App\Http\Controllers\mahasiswa\GradesController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Admin\UserManagementController;
+use App\Services\UserManagementService;
 
 Route::get('/', function () {
     return view('guest.landingpage');
@@ -91,22 +92,40 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
     
     // page user management
     Route::get('/user-management', [UserManagementController::class, 'pageUserManagement'])->name('usermanagementadmin');
+    // handle filter role
     Route::get('/user-management/filter/role', [UserManagementController::class, 'filterRole'])->name('usermanagementadmin.filter.role');
+    // handle filter search
     Route::get('/user-management/filter/search', [UserManagementController::class, 'filterSearch'])->name('usermanagementadmin.filter.search');
+    // handle create akun di user management
     Route::post('/user-management/create-akun', [UserManagementController::class, 'createAkun'])->name('usermanagementadmin.create.akun');
+    // hadle delete akun di user management
+    Route::delete('/user-management/delete-akun/{id}', [UserManagementController::class, 'deleteAkun'])->name('usermanagementadmin.delete.akun');
+
+    // page detail profil user management
+    Route::get('/user-management/detail-akun/{id}', [UserManagementController::class, 'detailProfil'])->name('usermanagementadmin.detail.profil');
+    // handle update profil
+    Route::patch('/user-management/update-akun/{id}', [UserManagementController::class, 'updateProfil'])->name('usermanagementadmin.update.profil');
 
 });
 
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile-saya', function () {
+    Route::get('/profile-saya', function (UserManagementService $UserManagementService) {
+
+        $id = Auth::user()->id_user; // Ambil data user yang sedang login
+
+        // dd($auth); // Debugging: Check the retrieved user ID
+        $user =  $UserManagementService->getOneUsersbyId($id);
+
         $page = 'page-profile';
-        return view('profile', compact('page'));
+        return view('profile', compact('page', 'user'));
     })->name('profile.saya');
 
-     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::post('/edit-profile/{id}', [ProfileController::class, 'editAkun'])->name('akun.edit');
+
+    // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 

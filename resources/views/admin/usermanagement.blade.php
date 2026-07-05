@@ -316,17 +316,22 @@
                                         <div
                                             class="fixed w-44 rounded-xl bg-white shadow-lg border border-outline-variant/20 z-50 hidden dropdown-menu text-left">
                                             <div class="py-1">
-                                                <a href="#"
+                                                <a href="{{ route('usermanagementadmin.detail.profil', encrypt($user->id_user)) }}"
                                                     class="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 hover:bg-slate-50 transition-colors">
                                                     <span class="material-symbols-outlined text-base">visibility</span>
                                                     <span>Detail Profil</span>
                                                 </a>
                                                 <hr class="border-slate-100 my-1">
-                                                <button type="button"
-                                                    class="w-full flex items-center gap-2 px-4 py-2.5 text-sm text-rose-600 hover:bg-rose-50 transition-colors">
-                                                    <span class="material-symbols-outlined text-base">delete</span>
-                                                    <span>Hapus Anggota</span>
-                                                </button>
+                                                <form action="{{ route('usermanagementadmin.delete.akun', $user->id_user) }}" method="POST"
+                                                    onsubmit="return confirm('Apakah Anda yakin ingin menghapus akun ini?');">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit"
+                                                        class="w-full flex items-center gap-2 px-4 py-2.5 text-sm text-rose-600 hover:bg-rose-50 transition-colors">
+                                                        <span class="material-symbols-outlined text-base">delete</span>
+                                                        <span>Hapus Anggota</span>
+                                                    </button>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>

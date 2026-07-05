@@ -1,23 +1,23 @@
 @extends('layouts.auth.app')
 @section('content')
-    @php
+    {{-- @php
         $user = Auth::user();
-    @endphp
+    @endphp --}}
 
-    <main class="md:pl-72 pt-16 min-h-screen">
+    <main class="min-h-screen">
         <div class="max-w-6xl mx-auto px-8 py-12">
             <!-- Header Section: Asymmetric Typography -->
-            <div class="mb-16">
-                <span class="text-primary font-bold uppercase tracking-widest text-xs mb-2 block">Settings &amp;
-                    Privacy</span>
-                <h1
+            <div class="mb-10">
+                <span
+                    class="text-primary font-bold uppercase tracking-widest text-xs mb-2 block">{{ $page == 'profile' ? 'Profile' : 'Detail Akun' }}</span>
+                {{-- <h1
                     class="font-display font-extrabold text-5xl md:text-6xl text-on-surface tracking-tighter leading-none mb-4">
                     Academic <br /><span class="text-primary-container italic font-body">Profile</span></h1>
                 <p class="font-body text-on-surface-variant text-lg max-w-xl">Refine your academic identity across the
-                    institutional ecosystem. Manage credentials, security protocols, and scholarly reach.</p>
+                    institutional ecosystem. Manage credentials, security protocols, and scholarly reach.</p> --}}
             </div>
             <!-- 1. Profile Overview (The Hero Card) -->
-            <section class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16 items-start">
+            <section class="grid  gap-8 mb-16 items-start">
                 <div
                     class="md:col-span-8 bg-surface-container-lowest p-8 rounded-full border-none flex flex-col md:flex-row items-center gap-8 shadow-sm">
                     <div class="relative group">
@@ -34,7 +34,7 @@
                     <div class="text-center md:text-left flex-1">
                         <h3 class="text-2xl font-bold text-on-surface tracking-tight">{{ $user->name }}</h3>
                         <p class="text-primary font-medium mb-4">
-                            @php
+                            {{-- @php
                                 $subtitle = match ($user->role) {
                                     'mahasiswa' => $user->prodi && strtolower($user->prodi) !== 'mahasiswa'
                                         ? "Mahasiswa {$user->prodi}"
@@ -45,148 +45,187 @@
                                     default => 'Administrator',
                                 };
                             @endphp
-                            {{ $subtitle }}
+                            {{ $subtitle }} --}}
+                            {{ $user->role === 'mahasiswa' ? 'Mahasiswa' : ($user->role === 'dosen' ? 'Dosen' : 'Staff Administrator') }}
                         </p>
                         <div class="flex flex-wrap gap-2 justify-center md:justify-start">
                             <span
-                                class="px-3 py-1 bg-secondary-container/30 text-secondary-fixed-dim text-xs font-bold rounded uppercase tracking-wider">{{ strtoupper($user->role) }}</span>
-                            <span
-                                class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-xs font-bold rounded uppercase tracking-wider">Public
-                                Profile</span>
+                                class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-xs font-bold rounded uppercase tracking-wider">
+                                {{ $user->email }}
+                            </span>
                         </div>
                     </div>
                     <div class="flex gap-4">
                         <button
-                            class="bg-primary text-on-primary px-6 py-3 rounded-xl font-bold hover:shadow-md transition-all active:scale-95">Update
-                            Photo</button>
+                            class="bg-primary text-on-primary px-6 py-3 rounded-xl font-bold hover:shadow-md transition-all active:scale-95">
+                            Update Photo
+                        </button>
                     </div>
                 </div>
-                <div
+                {{-- <div
                     class="md:col-span-4 bg-primary-container text-on-primary-container p-8 rounded-full h-full flex flex-col justify-center">
                     <span class="material-symbols-outlined mb-4 text-3xl">verified</span>
                     <h4 class="font-bold text-xl mb-2">Institutional Badge</h4>
                     <p class="text-sm opacity-80 leading-relaxed">Your profile is verified by the Central Academic Registry.
                         All research contributions are linked to your ORCID iD.</p>
-                </div>
+                </div> --}}
             </section>
             <!-- 2. Personal Information (Forms with Noto Serif) -->
             <section class="mb-20">
+
                 <div class="flex items-center gap-4 mb-8">
                     <h2 class="text-2xl font-bold tracking-tight">Personal Information</h2>
                     <div class="h-px flex-1 bg-outline-variant/30"></div>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
-                    <div class="space-y-2">
-                        <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">Full
-                            Name</label>
-                        <input
-                            class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/40 font-body transition-all"
-                            type="text" value="{{ $user->name }}" readonly />
-                    </div>
-                    <div class="space-y-2">
-                        <label
-                            class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">Institutional
-                            Email</label>
-                        <input
-                            class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/40 font-body transition-all"
-                            type="email" value="{{ $user->email }}" readonly />
-                    </div>
-                    <div class="space-y-2 md:col-span-2">
-                        <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">Academic
-                            Bio</label>
-                        <textarea
-                            class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/40 font-body transition-all leading-relaxed"
-                            rows="4">Specializing in the intersection of neural networks and linguistic evolution. Leading the 2024 Cognitive Mapping initiative at the Metropolitan Research Hub.</textarea>
-                        <p class="text-[10px] text-on-surface-variant mt-1 px-1">Max 500 characters. Visible on your public
-                            scholarly profile.</p>
-                    </div>
-                    <div class="space-y-2">
-                        <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">Role</label>
-                        <input
-                            class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/40 font-body transition-all"
-                            type="text" value="{{ ucfirst($user->role) }}" disabled />
-                    </div>
+                <form action="{{ route('akun.edit', encrypt($user->id_user)) }}" method="POST" class="space-y-8">
+                    @csrf
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">Full
+                                Name</label>
+                            <input name="name"
+                                class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/40 font-body transition-all"
+                                type="text" value="{{ $user->name }}" />
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">
+                                Email</label>
+                            <input name="email"
+                                class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/40 font-body transition-all"
+                                type="email" value="{{ $user->email }}" />
+                        </div>
+                        {{-- <div class="space-y-2 md:col-span-2">
+                            <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">Academic
+                                Bio</label>
+                            <textarea
+                                class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/40 font-body transition-all leading-relaxed"
+                                rows="4">Specializing in the intersection of neural networks and linguistic evolution. Leading the 2024 Cognitive Mapping initiative at the Metropolitan Research Hub.</textarea>
+                            <p class="text-[10px] text-on-surface-variant mt-1 px-1">Max 500 characters. Visible on your public
+                                scholarly profile.</p>
+                        </div> --}}
+                        <div class="space-y-2">
+                            <label
+                                class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">Role</label>
+                            <input name="role"
+                                class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/40 font-body transition-all"
+                                type="text"
+                                value="{{ ucfirst($user->role === 'mahasiswa' ? 'Mahasiswa' : ($user->role === 'dosen' ? 'Dosen' : 'Staff Administrator')) }}"
+                                disabled />
+                        </div>
 
-                    @if ($user->role === 'mahasiswa')
-                        <div class="space-y-2">
-                            <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">NPM</label>
-                            <input
-                                class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/40 font-body transition-all"
-                                type="text" value="{{ $user->npm }}" disabled />
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">Program Studi</label>
-                            <input
-                                class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/40 font-body transition-all"
-                                type="text" value="{{ $user->prodi }}" />
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">Tahun Masuk</label>
-                            <input
-                                class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/40 font-body transition-all"
-                                type="text" value="{{ $user->tahun_masuk }}" />
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">Semester</label>
-                            <input
-                                class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/40 font-body transition-all"
-                                type="text" value="{{ $user->semester }}" />
-                        </div>
-                    @elseif ($user->role === 'dosen')
-                        <div class="space-y-2">
-                            <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">NIDN</label>
-                            <input
-                                class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/40 font-body transition-all"
-                                type="text" value="{{ $user->nidn }}" />
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">Program Studi</label>
-                            <input
-                                class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/40 font-body transition-all"
-                                type="text" value="{{ $user->prodi }}" />
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">Gelar Depan</label>
-                            <input
-                                class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/40 font-body transition-all"
-                                type="text" value="{{ $user->gelar_depan }}" />
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">Gelar Belakang</label>
-                            <input
-                                class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/40 font-body transition-all"
-                                type="text" value="{{ $user->gelar_belakang }}" />
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">Jabatan</label>
-                            <input
-                                class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/40 font-body transition-all"
-                                type="text" value="{{ $user->jabatan }}" />
-                        </div>
-                    @elseif ($user->role === 'admin')
-                        <div class="space-y-2">
-                            <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">NIP</label>
-                            <input
-                                class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/40 font-body transition-all"
-                                type="text" value="{{ $user->nip }}" />
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">Jabatan</label>
-                            <input
-                                class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/40 font-body transition-all"
-                                type="text" value="{{ $user->jabatan }}" />
-                        </div>
-                    @endif
+                        @if ($user->role === 'mahasiswa')
+                            <div class="space-y-2">
+                                <label
+                                    class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">NPM</label>
+                                <input name="npm"
+                                    class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/40 font-body transition-all"
+                                    type="text" value="{{ $user->kode_ref }}" disabled />
+                                <input name="npm" hidden
+                                    class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/40 font-body transition-all"
+                                    type="text" value="{{ $user->kode_ref }}" />
+                            </div>
+                            <div class="space-y-2">
+                                <label
+                                    class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">Program
+                                    Studi</label>
+                                <input name="prodi"
+                                    class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/40 font-body transition-all"
+                                    type="text" value="{{ $user->prodi }}" />
+                            </div>
+                            <div class="space-y-2">
+                                <label
+                                    class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">Tahun
+                                    Masuk</label>
+                                <input name="tahun_masuk"
+                                    class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/40 font-body transition-all"
+                                    type="integer" value="{{ $user->tahun_masuk }}" />
+                            </div>
+                            <div class="space-y-2">
+                                <label
+                                    class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">Semester</label>
+                                <input name="semester"
+                                    class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/40 font-body transition-all"
+                                    type="text" value="{{ $user->semester }}" />
+                            </div>
+                        @elseif ($user->role === 'dosen')
+                            <div class="space-y-2">
+                                <label
+                                    class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">NIDN</label>
+                                <input name="nidn"
+                                    class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/40 font-body transition-all"
+                                    type="text" value="{{ $user->kode_ref }}" disabled />
+                                <input name="nidn" hidden
+                                    class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/40 font-body transition-all"
+                                    type="text" value="{{ $user->kode_ref }}" />
+                            </div>
+                            <div class="space-y-2">
+                                <label
+                                    class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">Program
+                                    Studi</label>
+                                <input name="prodi"
+                                    class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/40 font-body transition-all"
+                                    type="text" value="{{ $user->prodi }}" />
+                            </div>
+                            <div class="space-y-2">
+                                <label
+                                    class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">Gelar
+                                    Depan</label>
+                                <input name="gelar_depan"
+                                    class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/40 font-body transition-all"
+                                    type="text" value="{{ $user->gelar_depan }}" />
+                            </div>
+                            <div class="space-y-2">
+                                <label
+                                    class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">Gelar
+                                    Belakang</label>
+                                <input name="gelar_belakang"
+                                    class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/40 font-body transition-all"
+                                    type="text" value="{{ $user->gelar_belakang }}" />
+                            </div>
+                            <div class="space-y-2">
+                                <label
+                                    class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">Jabatan</label>
+                                <input name="jabatan"
+                                    class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/40 font-body transition-all"
+                                    type="text" value="{{ $user->jabatan }}" />
+                            </div>
+                        @elseif ($user->role === 'admin')
+                            <div class="space-y-2">
+                                <label
+                                    class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">NIP</label>
+                                <input name="nip"
+                                    class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/40 font-body transition-all"
+                                    type="text" value="{{ $user->kode_ref }}" disabled />
+                                <input name="nip" hidden
+                                    class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/40 font-body transition-all"
+                                    type="text" value="{{ $user->kode_ref }}" />
+                            </div>
+                            <div class="space-y-2">
+                                <label
+                                    class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">Jabatan</label>
+                                <input name="jabatan"
+                                    class="w-full bg-surface-container-high border-none rounded-xl px-4 py-4 text-on-surface focus:ring-2 focus:ring-primary/40 font-body transition-all"
+                                    type="text" value="{{ $user->jabatan }}" />
+                            </div>
+                        @endif
 
-                    <div class="flex items-end">
-                        <button
-                            class="bg-surface-container-lowest border border-primary/20 text-primary px-8 py-4 rounded-xl font-bold hover:bg-primary-fixed/30 transition-all w-full md:w-auto">Save
-                            Changes</button>
+                        <div class="flex items-end gap-2">
+                            {{-- <button
+                                class="bg-primary border border-primary/20 text-surface-container-lowest px-8 py-4 rounded-xl font-bold hover:bg-purple-700 transition-all w-full md:w-auto">
+                                Ubah Password
+                            </button> --}}
+
+                            <button type="submit"
+                                class="bg-surface-container-lowest border border-primary/20 text-primary px-8 py-4 rounded-xl font-bold hover:bg-primary-fixed/30 transition-all w-full md:w-auto">Save
+                                Changes
+                            </button>
+                        </div>
+
                     </div>
-                </div>
+                </form>
             </section>
             <!-- Bento Grid for Security & Notifications -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
+            <div class="grid grid-cols-1 gap-8 mb-20">
                 <!-- 3. Account Security (Glassmorphism Card) -->
                 <div class="lg:col-span-2 bg-surface-container-low p-8 rounded-full">
                     <div class="flex items-center justify-between mb-8">
@@ -201,13 +240,13 @@
                                     <span class="material-symbols-outlined">lock_reset</span>
                                 </div>
                                 <div>
-                                    <p class="font-bold text-sm">Account Password</p>
-                                    <p class="text-xs text-on-surface-variant">Last changed 4 months ago</p>
+                                    <p class="font-bold text-sm">Ubah Password</p>
+                                    <p class="text-xs text-on-surface-variant">Last Updated 4 months ago</p>
                                 </div>
                             </div>
-                            <button class="text-primary font-bold text-sm hover:underline">Update</button>
+                            <button class="text-primary font-bold text-sm hover:underline">Edit</button>
                         </div>
-                        <div
+                        {{-- <div
                             class="flex items-center justify-between p-6 bg-surface-container-lowest rounded-xl border border-primary/10">
                             <div class="flex items-center gap-4">
                                 <div
@@ -221,8 +260,8 @@
                             </div>
                             <span
                                 class="bg-green-100 text-green-700 text-[10px] px-2 py-1 rounded font-black uppercase tracking-tighter">Active</span>
-                        </div>
-                        <div class="pt-4">
+                        </div> --}}
+                        {{-- <div class="pt-4">
                             <p class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4 px-1">Active
                                 Login Sessions</p>
                             <div class="space-y-3">
@@ -239,11 +278,11 @@
                                     <button class="text-error font-bold text-[10px] uppercase">Revoke</button>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <!-- 4. Notification Preferences (Vertical Column) -->
-                <div class="bg-surface-container-low p-8 rounded-full border border-primary/5">
+                {{-- <div class="bg-surface-container-low p-8 rounded-full border border-primary/5">
                     <h2 class="text-xl font-bold tracking-tight mb-8">Alerts</h2>
                     <div class="space-y-8">
                         <div>
@@ -293,7 +332,7 @@
                             </label>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <!-- 5. Privacy & Data (Asymmetric Layout) -->
             <section class="flex flex-col md:flex-row gap-12 items-start mb-24">
@@ -366,4 +405,106 @@
             </div>
         </footer>
     </main>
+
+    @if (session('berhasil') || session('gagal'))
+        <!-- Overlay / Background Hitam Transparan -->
+        <div id="status-modal"
+            class="fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-50 p-4 transition-opacity duration-300 opacity-0 pointer-events-none">
+
+            <!-- Kotak Modal -->
+            <div
+                class="bg-white rounded-lg shadow-xl transform transition-all duration-300 scale-95 w-full max-w-md overflow-hidden">
+
+                <!-- Header Modal -->
+                <div id="modal-header" class="px-6 py-4 flex items-center justify-between text-white">
+                    <h3 id="modal-title" class="text-lg font-semibold"></h3>
+                    <button onclick="closeStatusModal()"
+                        class="text-white opacity-80 hover:opacity-100 transition-opacity focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Konten / Isi Modal -->
+                <div class="p-6 text-center">
+                    <!-- Wadah Ikon -->
+                    <div id="modal-icon-bg" class="mx-auto flex items-center justify-center h-16 w-16 rounded-full mb-4">
+                        <!-- Ikon Sukses (Centang) -->
+                        <svg id="icon-success" class="h-10 w-10 hidden" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <!-- Ikon Gagal (Silang) -->
+                        <svg id="icon-error" class="h-10 w-10 hidden" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+
+                    <!-- Teks Pesan dari Laravel -->
+                    <p class="text-gray-700 text-base leading-relaxed">
+                        {{ session('berhasil') ?? session('gagal') }}
+                    </p>
+                </div>
+
+                <!-- Footer / Tombol Aksi -->
+                <div class="bg-gray-50 px-6 py-4 flex justify-center">
+                    <button id="modal-btn" onclick="closeStatusModal()"
+                        class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 sm:text-sm transition-colors">
+                        Tutup
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const modal = document.getElementById('status-modal');
+                const modalContent = modal.querySelector('.transform');
+
+                const header = document.getElementById('modal-header');
+                const title = document.getElementById('modal-title');
+                const iconBg = document.getElementById('modal-icon-bg');
+                const btn = document.getElementById('modal-btn');
+
+                // Cek tipe session yang aktif dari Laravel
+                const isSuccess = @json(session()->has('berhasil'));
+
+                if (isSuccess) {
+                    // Pengaturan komponen warna hijau untuk Sukses
+                    header.classList.add('bg-emerald-600');
+                    title.innerText = 'Proses Sukses';
+                    iconBg.classList.add('bg-emerald-100');
+                    document.getElementById('icon-success').classList.remove('hidden');
+                    document.getElementById('icon-success').classList.add('text-emerald-600');
+                    btn.classList.add('bg-emerald-600', 'hover:bg-emerald-700', 'focus:ring-emerald-500');
+                } else {
+                    // Pengaturan komponen warna merah untuk Gagal
+                    header.classList.add('bg-red-600');
+                    title.innerText = 'Terjadi Kesalahan';
+                    iconBg.classList.add('bg-red-100');
+                    document.getElementById('icon-error').classList.remove('hidden');
+                    document.getElementById('icon-error').classList.add('text-red-600');
+                    btn.classList.add('bg-red-600', 'hover:bg-red-700', 'focus:ring-red-500');
+                }
+
+                // Tampilkan modal dengan animasi halusnya
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            });
+
+            function closeStatusModal() {
+                const modal = document.getElementById('status-modal');
+                const modalContent = modal.querySelector('.transform');
+
+                modal.classList.add('opacity-0', 'pointer-events-none');
+                modalContent.classList.remove('scale-100');
+                modalContent.classList.add('scale-95');
+            }
+        </script>
+    @endif
 @endsection
