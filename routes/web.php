@@ -105,6 +105,8 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
     Route::get('/user-management/detail-akun/{id}', [UserManagementController::class, 'detailProfil'])->name('usermanagementadmin.detail.profil');
     // handle update profil
     Route::patch('/user-management/update-akun/{id}', [UserManagementController::class, 'updateProfil'])->name('usermanagementadmin.update.profil');
+    // handle import profil
+    Route::post('/user-management/import-akun', [UserManagementController::class, 'importProfil'])->name('usermanagementadmin.import.profil');
 
 });
 

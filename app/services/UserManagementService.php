@@ -37,6 +37,7 @@ class UserManagementService
                         ->orWhere(DB::raw("COALESCE(dosen.nidn, admin.nip, mahasiswa.npm)"), 'ILIKE', "%{$search}%");
                 });
             })
+            ->orderBy('users.created_at', 'desc')
             ->paginate(5)
             ->withQueryString();
 

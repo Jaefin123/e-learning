@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Services\UserManagementService;
 use Illuminate\Support\Carbon;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\UsersImport;
 
 class UserManagementController extends Controller
 {
@@ -232,7 +234,7 @@ class UserManagementController extends Controller
     // page detail profil user management
     public function detailProfil($id)
     {
-        $idAsli = decrypt($id); 
+        $idAsli = decrypt($id);
 
         $user = $this->userManagementService->getOneUsersbyId($idAsli);
         // dd($user); // Debugging: Check the retrieved user data
@@ -240,5 +242,17 @@ class UserManagementController extends Controller
         $page = 'page-detailprofil';
 
         return view('profile', compact('page', 'user'));
+    }
+
+    // handle inport profil user management
+    public function importProfil(Request $request)
+    {
+        try {
+            Excel::import(new UsersImport($request->role), $request->file('csv_file'));
+            return back()->with(['berhasil' => 'Data berhasil diimpor.']);
+        } catch (\Throwable $th) {
+            //throw $th;
+            return back()->with(['gagal' => 'pastikan file CSV atau excel sesuai format dan tipe akun yang ditentukan.']);
+        }
     }
 }

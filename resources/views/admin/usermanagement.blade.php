@@ -134,9 +134,9 @@
                                         <select name="dosen_prodi"
                                             class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/10">
                                             <option value="" disabled selected>-- Pilih Program Studi --</option>
-                                            <option value="teknik-sipil">Teknik Sipil</option>
-                                            <option value="teknik-komputer">Teknik Komputer</option>
-                                            <option value="teknik-lingsung">Teknik Lingkungan</option>
+                                            <option value="teknik sipil">Teknik Sipil</option>
+                                            <option value="teknik komputer">Teknik Komputer</option>
+                                            <option value="teknik lingkungan">Teknik Lingkungan</option>
                                         </select>
                                     </div>
                                     <div>
@@ -162,9 +162,9 @@
                                         <select name="mahasiswa_prodi"
                                             class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/10">
                                             <option value="" disabled selected>-- Pilih Program Studi --</option>
-                                            <option value="teknik-sipil">Teknik Sipil</option>
-                                            <option value="teknik-komputer">Teknik Komputer</option>
-                                            <option value="teknik-lingsung">Teknik Lingkungan</option>
+                                            <option value="teknik sipil">Teknik Sipil</option>
+                                            <option value="teknik komputer">Teknik Komputer</option>
+                                            <option value="teknik lingkungan">Teknik Lingkungan</option>
                                         </select>
                                     </div>
                                     <div>
@@ -322,7 +322,9 @@
                                                     <span>Detail Profil</span>
                                                 </a>
                                                 <hr class="border-slate-100 my-1">
-                                                <form action="{{ route('usermanagementadmin.delete.akun', $user->id_user) }}" method="POST"
+                                                <form
+                                                    action="{{ route('usermanagementadmin.delete.akun', $user->id_user) }}"
+                                                    method="POST"
                                                     onsubmit="return confirm('Apakah Anda yakin ingin menghapus akun ini?');">
                                                     @csrf
                                                     @method('DELETE')
@@ -364,11 +366,11 @@
 
             <!-- import csv -->
             <div class="relative bg-surface-container-high rounded-[2.5rem] p-12 overflow-hidden">
-                <div class="absolute top-0 right-0 w-1/2 h-full opacity-10">
+                {{-- <div class="absolute top-0 right-0 w-1/2 h-full opacity-10">
                     <img alt="Collaboration" class="w-full h-full object-cover"
                         data-alt="blurred motion shot of students collaborating around a large wooden table in a high-modern library space"
                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPIv_GcsmTvWIofNohEnwYrF_efaR-4I-7GzdHcVug7qoJ0WU7q3RzapIvV39R0pDRgYljXcIO6Eg0nyna5DNamXT4hrwi0LQH-01rPhIfKPeTR_dzmM4eVpayh9iIZKXDtpF5iQmcU1wBL6nqIzI6TAYn8a2uxKGLG3WOCdzUN3SzHEJNdgKpoL7WzLyHs8NqZT3M0WX7W1H0mizcVtFde1L9g7VwOcrZR_IcTfCb4p3mJDJn29EVDzxNllAvuuggM3Df6cqatss" />
-                </div>
+                </div> --}}
                 <div class="relative z-10 max-w-lg">
                     <h3 class="text-3xl font-headline font-bold text-primary mb-6">Perlu mendaftar secara massal?</h3>
                     <p class="serif-content text-lg text-on-surface-variant mb-8 leading-relaxed">
@@ -376,15 +378,65 @@
                         kami untuk
                         menjaga integritas data.
                     </p>
-                    <div class="flex gap-4">
+                    {{-- <div class="flex gap-4">
                         <button
                             class="bg-surface-container-lowest text-primary px-6 py-3 rounded-xl font-bold hover:bg-white transition-all shadow-sm">
                             Unduh Template
                         </button>
+                        <select name="role" id="roleSelect" required
+                            class="bg-surface-container-lowest border border-primary text-primary px-6 py-4 rounded-xl font-bold focus:ring-2 focus:ring-primary/10">
+                            <option value="" disabled selected>Tipe Akun </option>
+                            <option value="admin">Staff Akademik </option>
+                            <option value="dosen">Dosen </option>
+                            <option value="mahasiswa">Mahasiswa </option>
+                        </select>
+                        <input type="file" name="csv_file" accept=".csv" id="csvFileInput"
+                            class="bg-surface-container-lowest border border-primary text-primary px-6 py-4 rounded-xl font-bold focus:ring-2 focus:ring-primary/10 cursor-pointer file:mr-4 file:py-0 file:px-0 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-transparent file:text-primary box-border" />
+
+
                         <button
                             class="bg-transparent border-2 border-primary text-primary px-6 py-3 rounded-xl font-bold hover:bg-primary/5 transition-all">
                             Unggah CSV
                         </button>
+                    </div> --}}
+                    <div class="flex gap-4 items-center">
+                        <!-- Tombol Unduh -->
+                        <button type="button"
+                            class="h-[58px] bg-surface-container-lowest text-primary px-6 rounded-xl font-bold hover:bg-white transition-all shadow-sm border border-transparent box-border flex items-center justify-center">
+                            Unduh Template
+                        </button>
+                        <form action="{{ route('usermanagementadmin.import.profil') }}" method="POST"
+                            enctype="multipart/form-data">
+                            @csrf
+                            <div class="flex gap-4">
+                                <!-- Dropdown Tipe Akun -->
+                                <select name="role" id="roleSelect" required
+                                    class="h-[58px] bg-surface-container-lowest border border-primary text-primary px-6 rounded-xl font-bold focus:ring-2 focus:ring-primary/10 box-border flex items-center">
+                                    <option value="" disabled selected>Tipe Akun </option>
+                                    <option value="admin">Staff Akademik </option>
+                                    <option value="dosen">Dosen </option>
+                                    <option value="mahasiswa">Mahasiswa </option>
+                                </select>
+
+                                <!-- Input File -->
+                                <div
+                                    class="h-[58px] relative bg-surface-container-lowest border border-primary text-primary rounded-xl font-bold focus-within:ring-2 focus-within:ring-primary/10 box-border flex items-center px-6">
+                                    <input type="file" name="csv_file"
+                                        accept=".csv, .xls, .xlsx, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                                        id="csvFileInput" class="absolute inset-0 opacity-0 cursor-pointer w-full h-full"
+                                        onchange="document.getElementById('fileName').textContent = this.files[0] ? this.files[0].name : 'Pilih File CSV'" />
+                                    <span id="fileName"
+                                        class="text-primary pointer-events-none truncate max-w-[150px]">Pilih
+                                        File CSV</span>
+                                </div>
+
+                                <!-- Tombol Unggah -->
+                                <button type="submit"
+                                    class="h-[58px] bg-transparent border border-primary text-primary px-6 rounded-xl font-bold hover:bg-primary/5 transition-all box-border flex items-center justify-center">
+                                    Unggah CSV
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
