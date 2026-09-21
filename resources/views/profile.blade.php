@@ -10,44 +10,64 @@
             <div class="mb-10">
                 <span
                     class="text-primary font-bold uppercase tracking-widest text-xs mb-2 block">{{ $page == 'profile' ? 'Profile' : 'Detail Akun' }}</span>
-                {{-- <h1
-                    class="font-display font-extrabold text-5xl md:text-6xl text-on-surface tracking-tighter leading-none mb-4">
-                    Academic <br /><span class="text-primary-container italic font-body">Profile</span></h1>
-                <p class="font-body text-on-surface-variant text-lg max-w-xl">Refine your academic identity across the
-                    institutional ecosystem. Manage credentials, security protocols, and scholarly reach.</p> --}}
+                
             </div>
             <!-- 1. Profile Overview (The Hero Card) -->
-            <section class="grid  gap-8 mb-16 items-start">
+            <section class="grid gap-8 mb-16 items-start">
                 <div
                     class="md:col-span-8 bg-surface-container-lowest p-8 rounded-full border-none flex flex-col md:flex-row items-center gap-8 shadow-sm">
+
                     <div class="relative group">
+
                         <div class="h-32 w-32 rounded-full overflow-hidden border-4 border-surface ring-2 ring-primary/20">
-                            <img class="w-full h-full object-cover"
-                                data-alt="A sophisticated headshot of a faculty member for a high-end university website. The lighting is soft and professional, capturing a friendly but authoritative academic demeanor. The style matches the purple and white editorial aesthetic of the LMS, with a clean architectural background that feels modern and elite."
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFjPijh6tm2LaVviZXNaugcVqO0XKcmnD8Q0d8pLhvQJkDEY2ixrf5Ib5r60XlOJ5Px1-GhvxvsSWKq1cOc4s9iHzi2UMa7YD3ZeUsvM1OwQCKsjd-XTDCcJK1UPDU5oWSTOIPRiBWnguoXwRhcdHGsHQjLtsO8bkJxcddj4EO57ApEkL3hfK16g0j9EcX_fxj0VPTPAYKYvqnWU-lJMdXZVmuNA77anmllNTegJvBlj2lakFB7x2w6fg3EgRCjbbDUij-cQG5J7A" />
+                            <img
+                                class="w-full h-full object-cover"
+                                src="{{ $user->profile
+                                    ? asset('storage/' . $user->profile)
+                                    : asset('images/default-profile.png') }}"
+                                alt="Profile"
+                            />
                         </div>
-                        <button
-                            class="absolute bottom-0 right-0 bg-primary text-on-primary h-10 w-10 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-sm">photo_camera</span>
-                        </button>
+
+                        <form
+                            action="{{ route('profile.photo.update') }}"
+                            method="POST"
+                            enctype="multipart/form-data"
+                        >
+                            @csrf
+
+                            <input
+                                type="file"
+                                name="image_profile"
+                                id="profile-photo"
+                                accept=".jpg,.jpeg,.png"
+                                class="hidden"
+                                onchange="this.form.submit()"
+                            >
+
+                            <label
+                                for="profile-photo"
+                                class="absolute bottom-0 right-0 bg-primary text-on-primary h-10 w-10 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform cursor-pointer"
+                            >
+                                <span class="material-symbols-outlined text-sm">photo_camera</span>
+                            </label>
+                        </form>
+
                     </div>
+
                     <div class="text-center md:text-left flex-1">
-                        <h3 class="text-2xl font-bold text-on-surface tracking-tight">{{ $user->name }}</h3>
+                        <h3 class="text-2xl font-bold text-on-surface tracking-tight">
+                            {{ $user->name }}
+                        </h3>
+
                         <p class="text-primary font-medium mb-4">
-                            {{-- @php
-                                $subtitle = match ($user->role) {
-                                    'mahasiswa' => $user->prodi && strtolower($user->prodi) !== 'mahasiswa'
-                                        ? "Mahasiswa {$user->prodi}"
-                                        : 'Mahasiswa',
-                                    'dosen' => $user->prodi && strtolower($user->prodi) !== 'dosen'
-                                        ? "Dosen {$user->prodi}"
-                                        : 'Dosen',
-                                    default => 'Administrator',
-                                };
-                            @endphp
-                            {{ $subtitle }} --}}
-                            {{ $user->role === 'mahasiswa' ? 'Mahasiswa' : ($user->role === 'dosen' ? 'Dosen' : 'Staff Administrator') }}
+                            {{ $user->role === 'mahasiswa'
+                                ? 'Mahasiswa'
+                                : ($user->role === 'dosen'
+                                    ? 'Dosen'
+                                    : 'Staff Administrator') }}
                         </p>
+
                         <div class="flex flex-wrap gap-2 justify-center md:justify-start">
                             <span
                                 class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-xs font-bold rounded uppercase tracking-wider">
@@ -55,20 +75,17 @@
                             </span>
                         </div>
                     </div>
+
                     <div class="flex gap-4">
-                        <button
-                            class="bg-primary text-on-primary px-6 py-3 rounded-xl font-bold hover:shadow-md transition-all active:scale-95">
+                        <label
+                            for="profile-photo"
+                            class="bg-primary text-on-primary px-6 py-3 rounded-xl font-bold hover:shadow-md transition-all active:scale-95 cursor-pointer"
+                        >
                             Update Photo
-                        </button>
+                        </label>
                     </div>
+
                 </div>
-                {{-- <div
-                    class="md:col-span-4 bg-primary-container text-on-primary-container p-8 rounded-full h-full flex flex-col justify-center">
-                    <span class="material-symbols-outlined mb-4 text-3xl">verified</span>
-                    <h4 class="font-bold text-xl mb-2">Institutional Badge</h4>
-                    <p class="text-sm opacity-80 leading-relaxed">Your profile is verified by the Central Academic Registry.
-                        All research contributions are linked to your ORCID iD.</p>
-                </div> --}}
             </section>
             <!-- 2. Personal Information (Forms with Noto Serif) -->
             <section class="mb-20">

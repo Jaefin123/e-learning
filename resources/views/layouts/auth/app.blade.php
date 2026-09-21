@@ -13,12 +13,16 @@
 </head>
 
 <body class="bg-surface text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
-    <!-- Sisipkan Navbar -->
-    @include('layouts.auth.navbar') // di ganti sama navbar dan side bar dashboard mahasigma
+
+    @php
+        $navbarUser = app(\App\Services\UserManagementService::class)
+            ->getOneUsersbyId(Auth::user()->id_user);
+    @endphp
+
+    @include('layouts.auth.navbar', ['navbarUser' => $navbarUser])
 
     @include('layouts.auth.sidebar')
 
-    <!-- content landing page (index guest)-->
     <div class="pt-4">
         @yield('content')
     </div>

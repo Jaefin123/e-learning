@@ -306,34 +306,43 @@
                                 <td class="px-8 py-6 text-sm text-on-surface-variant">{{ $user->email }}</td>
                                 <td class="px-8 py-6 text-right">
                                     <div class="relative inline-block text-left dropdown-container">
+
                                         {{-- Tombol Titik Tiga --}}
                                         <button type="button"
                                             class="p-2 hover:bg-white rounded-full transition-colors text-slate-400 hover:text-primary dropdown-trigger">
                                             <span class="material-symbols-outlined pointer-events-none">more_vert</span>
                                         </button>
 
-                                        {{-- 💡 UBAH MENJADI FIXED & HAPUS RIGHT-0: Agar melayang bebas di atas potongan tabel --}}
+                                        {{-- Dropdown Menu --}}
                                         <div
                                             class="fixed w-44 rounded-xl bg-white shadow-lg border border-outline-variant/20 z-50 hidden dropdown-menu text-left">
+
                                             <div class="py-1">
+
+                                                {{-- Detail Profil --}}
                                                 <a href="{{ route('usermanagementadmin.detail.profil', encrypt($user->id_user)) }}"
                                                     class="flex items-center gap-2 px-4 py-2.5 text-sm text-slate-700 hover:bg-slate-50 transition-colors">
                                                     <span class="material-symbols-outlined text-base">visibility</span>
                                                     <span>Detail Profil</span>
                                                 </a>
+
                                                 <hr class="border-slate-100 my-1">
-                                                <form
+
+                                                {{-- Hapus Anggota --}}
+                                                <form id="formHapusUser-{{ $user->id_user }}"
                                                     action="{{ route('usermanagementadmin.delete.akun', $user->id_user) }}"
-                                                    method="POST"
-                                                    onsubmit="return confirm('Apakah Anda yakin ingin menghapus akun ini?');">
+                                                    method="POST">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit"
+
+                                                    <button type="button"
+                                                        onclick="openDeleteModal('{{ $user->id_user }}')"
                                                         class="w-full flex items-center gap-2 px-4 py-2.5 text-sm text-rose-600 hover:bg-rose-50 transition-colors">
                                                         <span class="material-symbols-outlined text-base">delete</span>
                                                         <span>Hapus Anggota</span>
                                                     </button>
                                                 </form>
+
                                             </div>
                                         </div>
                                     </div>
@@ -704,4 +713,95 @@
             });
         });
     </script>
+    <script>
+        let selectedUserId = null;
+
+        function openDeleteModal(userId) {
+            selectedUserId = userId;
+
+            const modal = document.getElementById('deleteModal');
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeDeleteModal() {
+            const modal = document.getElementById('deleteModal');
+
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+
+            selectedUserId = null;
+        }
+
+        function confirmDeleteUser() {
+            if (!selectedUserId) {
+                return;
+            }
+
+            const form = document.getElementById(
+                'formHapusUser-' + selectedUserId
+            );
+
+            if (form) {
+                form.submit();
+            }
+        }
+    </script>
 @endsection
+<!-- Modal Konfirmasi Hapus -->
+<div id="deleteModal" class="fixed inset-0 z-[9999] hidden items-center justify-center bg-black/50 backdrop-blur-sm">
+
+    <div class="w-full max-w-md mx-4 overflow-hidden rounded-xl bg-white shadow-2xl">
+
+        {{-- Header --}}
+        <div class="bg-rose-600 px-6 py-4">
+            <div class="flex items-center justify-between">
+                <h3 class="text-lg font-bold text-white">
+                    Konfirmasi Penghapusan
+                </h3>
+
+                <button type="button" onclick="closeDeleteModal()"
+                    class="text-white hover:text-rose-100 text-2xl leading-none">
+                    &times;
+                </button>
+            </div>
+        </div>
+
+        {{-- Body --}}
+        <div class="px-6 py-7 text-center">
+
+            <div class="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-rose-100">
+                <span class="material-symbols-outlined text-3xl text-rose-600">
+                    delete
+                </span>
+            </div>
+
+            <h4 class="mb-2 text-lg font-bold text-slate-900">
+                Hapus akun pengguna?
+            </h4>
+
+            <p class="text-sm leading-6 text-slate-600">
+                Apakah Anda yakin ingin menghapus akun ini?
+                Data pengguna yang telah dihapus tidak dapat dikembalikan.
+            </p>
+
+        </div>
+
+        {{-- Footer --}}
+        <div class="flex gap-3 border-t border-slate-100 px-6 py-4">
+
+            <button type="button" onclick="closeDeleteModal()"
+                class="flex-1 rounded-lg border border-slate-300 px-4 py-2.5 font-semibold text-slate-700 hover:bg-slate-50 transition-colors">
+                Batal
+            </button>
+
+            <button type="button" onclick="confirmDeleteUser()"
+                class="flex-1 rounded-lg bg-rose-600 px-4 py-2.5 font-semibold text-white hover:bg-rose-700 transition-colors">
+                Ya, Hapus
+            </button>
+
+        </div>
+
+    </div>
+</div>

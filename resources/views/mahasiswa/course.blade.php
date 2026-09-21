@@ -35,24 +35,27 @@
             </section>
             <!-- Grid of Course Cards -->
             <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <x-course-card tag="Fisika" title="Fisika 1" teacher="Prof. Elias Thorne"
-                    progress="72"
-                    image="https://lh3.googleusercontent.com/aida-public/AB6AXuAR4gbd70DKSnGzZsPEuoRZyhS6O9_kLsvwXgvHjlXvs3pJDbYorYLpBooqVG7PLY9OSCTWy3ZpxUnnye3EdVxM7K_WOpO4Ov5zco_Ty1zsOxvbMWK5stnyRznYIdI9LWL5snQdqNLZblzK68V9GwzlHJRVa_L-xNrvcTCw-96Ink08F53sq4SpKAVwHT7pfSz2oHVTgUCt1yyFMfC8x3Cmy2BvlOZCGVnZwXZPohvgPLUiVYFsVUtGGJZl-qDZqVlHfNv667prWNk" />
+                @forelse($courses as $course)
 
-                <x-course-card tag="Pemrograman" title="Pemrograman Dasar" teacher="Dr. Sarah Vance" progress="45"
-                    image="https://lh3.googleusercontent.com/aida-public/AB6AXuAMBqeUGlCzluHxHumxiEMJtnu6210zD11Ij3TmV1N7cyFBf0uvdbfDhce1g7YUCwJFJpU6pAe6rKhkrI9II3DQIBVEX8gZk_1I8dJX9rvv8B9tUP4zmXIre7LfEmaeAM5TRaB1YUV2xH8VwbaEe-ISEVwOhKMrLoufaNdrSBDjOeZfVuqt9ezVlKnptK8hWwLG0iuMiUbek-Py7eWejr8ZJvUPg3mTR0lZeeAfmC4LjS6Xm4hv-ZNp-TlVOsrYQhM0S3JcNcZIzm4" />
+                <x-course-card
+                    tag="{{ $course->jurusan }}"
+                    title="{{ $course->nama_matkul }}"
+                    teacher="{{ $course->dosen_pengampu }}"
+                    progress="0"
+                    image="{{ $course->image_path
+                        ? asset('storage/'.$course->image_path)
+                        : 'https://via.placeholder.com/400x220?text=No+Image' }}"
+                />
 
-                <x-course-card tag="Desain" title="Desain UI/UX" teacher="Marcus Aurelius Jr." progress="89"
-                    image="https://lh3.googleusercontent.com/aida-public/AB6AXuCViX1FN7CW0zwj4llpr3VvCLfuz1ylOrzE8Xy3YboL0HoiqjK84NrKpBKl_zwVRqs5AVnKvVaRE_Z2nEer-tTiiMYXAhViRu5adzuyVvKauGATTIsXSrZG4S7B4PgPzxtxSNvkpsyuoTsu1Y4_g41xkKmUoQot6bygjukg0NCcKPehQk0K3mtQXp64Ss9sYZOA3hmBDWpb1e6S9dHDx103F7jY6CqfpU8Utat95KbJbtOFgO1vi-Oa60WcV2hU1Vyl_zaE4hjeDsA" />
+                @empty
 
-                <x-course-card  tag="Algoritma" title="Algoritma dan Struktur Data"
-                    teacher="Prof. Julianna Klay" progress="12"
-                    image="https://lh3.googleusercontent.com/aida-public/AB6AXuC2C1tRcg1gya0T3T8mPJHZJHSsoy5cZ5Ph86hUmYddzWXrhpKkoKI0S2FTiS9sZ6fxPeEpwERxs2TJqf0M4Ws3rUZM2vNWJHuNzKwHndUY2eBhptDGFEqFZxTfJREDuL2w1KACgh1ufCaq5vzHRes1t4rVl8HPI8ayQKTLpqepNusgWsFVxa0rLJJOA3-VF4ggwtsXUwHWiii8u7N2lVdSS1sQUe48YNva6meAlA4duCzTBSNyBC63l7WWQB3cWcgQFa2N3jXBaVg"
-                    actionLabel="Resume Module" />
+                <div class="col-span-3 text-center py-20">
+                    <p class="text-slate-500">
+                        Belum ada mata kuliah yang didaftarkan oleh admin.
+                    </p>
+                </div>
 
-                <x-course-card tag="Matematika" title="Matematika Diskrit" teacher="Dean Robert Sterling" progress="100"
-                    image="https://lh3.googleusercontent.com/aida-public/AB6AXuBj56-FNohQCuKbgUx7S3MMj1D9Oral4gQ3e4XzaE0I2FpdrxJm690lb6coMQU-QE1zPpu9dwM61W7K6IzNDwgWk8Tzu5xb50jZutsB9uBeLzm11FLzWFqaUayMtDHk8NZGbbonQ6kDqGu7Wk0KX7vvhd-ZBf1mhlosvCO0MVjWKBsQ-h-MMX_Z-isrRWVlPzwJBo9AZwEd9lPUtCHf-W98ynfk5a4G0V3mFco-tosMxbXluGi8lLSlVr_Ead-kEUdrMkp-f21MEXI"
-                    completed="true" />
+                @endforelse
             </section>
             <!-- Bottom Floating Action -->
             <div class="mt-24 text-center">

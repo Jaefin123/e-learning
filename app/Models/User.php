@@ -28,24 +28,14 @@ class User extends Authenticatable
     public $incrementing = false;
     protected $keyType = 'string';
 
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-        'role',
-        'npm',
-        'nidn',
-        'nip',
-        'prodi',
-        'gelar_depan',
-        'gelar_belakang',
-        'jabatan',
-        'tahun_masuk',
-        'semester',
-        'image_profile',
-        'status',
-    ];
-
+  protected $fillable = [
+    'name',
+    'email',
+    'password',
+    'role',
+    'image_profile',
+    'status',
+];
     /**
      * The attributes that should be hidden for serialization.
      *

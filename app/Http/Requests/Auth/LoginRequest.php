@@ -42,7 +42,24 @@ class LoginRequest extends FormRequest
     {
         $this->ensureIsNotRateLimited();
 
-        if (! Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {
+        try {
+            $attempt = Auth::attempt($this->only('email', 'password'), $this->boolean('remember'));
+        } catch (\RuntimeException $e) {
+            // If stored password is not hashed with bcrypt, attempt fallback login and rehash.
+            $user = \App\Models\User::where('email', $this->input('email'))->first();
+
+            if ($user && $user->password === $this->input('password')) {
+                $user->password = \Illuminate\Support\Facades\Hash::make($this->input('password'));
+                $user->save();
+                Auth::login($user, $this->boolean('remember'));
+                RateLimiter::clear($this->throttleKey());
+                return;
+            }
+
+            $attempt = false;
+        }
+
+        if (! $attempt) {
             RateLimiter::hit($this->throttleKey());
 
             throw ValidationException::withMessages([

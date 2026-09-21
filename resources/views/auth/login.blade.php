@@ -134,7 +134,7 @@
                             </div> --}}
 
                             <div class="flex items-center space-x-3 px-1">
-                                <input type="checkbox" id="remember"
+                                <input type="checkbox" id="remember" name="remember"
                                     class="w-4 h-4 rounded-sm border-outline-variant text-primary focus:ring-primary">
                                 <label for="remember" class="font-label text-sm text-on-surface-variant">Remember this
                                     device

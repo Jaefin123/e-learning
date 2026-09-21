@@ -30,11 +30,11 @@ class AuthenticatedSessionController extends Controller
 
         // Logika redirect berdasarkan role
         if ($request->user()->role === 'dosen') {
-            return redirect()->intended(route('look'));
-        }elseif ($request->user()->role === 'admin') {
-            return redirect()->intended(route('admin.dashboard'));
-        }elseif($request->user()->role === 'mahasiswa') {
-            return redirect()->intended(route('dashboard'));
+            return redirect()->intended(route('look', absolute: false));
+        } elseif ($request->user()->role === 'admin') {
+            return redirect()->intended(route('admin.dashboard', absolute: false));
+        } elseif ($request->user()->role === 'mahasiswa') {
+            return redirect()->intended(route('dashboard', absolute: false));
         }
 
         // Default redirect jika role tidak cocok

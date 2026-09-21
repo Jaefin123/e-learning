@@ -61,9 +61,15 @@ class ProfileController extends Controller
 
     public function editAkun(Request $request, $id)
     {
-        $idAsli = decrypt($id); // Decrypt the ID
+        $idAsli = decrypt($id);
 
-        // dd($request->all()); // Debugging: Check the incoming request data
+        $user = DB::table('users')
+            ->where('id_user', $idAsli)
+            ->first();
+
+        if (!$user) {
+            abort(404);
+        }
 
         $request->validate([
             'name' => 'required|string|max:255',
@@ -77,23 +83,28 @@ class ProfileController extends Controller
                 'email' => $request->email,
             ]);
 
-        if ($request->role === 'dosen') {
+        if ($user->role === 'dosen') {
+
             $request->validate([
-                'jabatan' => 'required|string|max:255',
-                'prodi' => 'required|string|max:255',
-                'nidn' => 'required|string|max:255',
-            ]);
+            'jabatan' => 'required|string|max:255',
+            'prodi' => 'required|string|max:255',
+            'nidn' => 'required|string|max:255',
+            'gelar_depan' => 'nullable|string|max:255',
+            'gelar_belakang' => 'nullable|string|max:255',
+        ]);
 
             DB::table('dosen')
-                ->where('id_user', $idAsli)
-                ->update([
-                    'jabatan' => $request->jabatan,
-                    'prodi' => $request->prodi,
-                    'nidn' => $request->nidn,
-                ]);
+            ->where('id_user', $idAsli)
+            ->update([
+                'jabatan' => $request->jabatan,
+                'prodi' => $request->prodi,
+                'nidn' => $request->nidn,
+                'gelar_depan' => $request->gelar_depan,
+                'gelar_belakang' => $request->gelar_belakang,
+            ]);
 
-            // dd('dosen'); // Debugging: Check the incoming request data
-        } elseif ($request->role === 'admin') {
+        } elseif ($user->role === 'admin') {
+
             $request->validate([
                 'jabatan' => 'required|string|max:255',
                 'nip' => 'required|string|max:255',
@@ -105,13 +116,12 @@ class ProfileController extends Controller
                     'jabatan' => $request->jabatan,
                     'nip' => $request->nip,
                 ]);
-            // dd('admin'); // Debugging: Check the incoming request data
+
         } else {
+
             $request->validate([
                 'prodi' => 'required|string|max:255',
                 'npm' => 'required|string|max:255',
-                // 'semester' => 'required|string|max:255',
-                // 'tahun_masuk' => 'required|integer|max:255',
             ]);
 
             DB::table('mahasiswa')
@@ -122,11 +132,47 @@ class ProfileController extends Controller
                     'semester' => $request->semester,
                     'tahun_masuk' => $request->tahun_masuk,
                 ]);
-            // dd('mahasiswa'); // Debugging: Check the incoming request data
         }
         // dd($request->all()); // Debugging: Check the incoming request data
 
         // return back()->with('berhasil', 'Profile updated successfully.');
         return back()->with(['berhasil' => 'Profile berhasil diupdate.']);
     }
+        public function updatePhoto(Request $request): RedirectResponse
+        {
+            $request->validate([
+                'image_profile' => [
+                    'required',
+                    'image',
+                    'mimes:jpg,jpeg,png',
+                    'max:2048',
+                ],
+            ]);
+
+            $user = $request->user();
+
+            $path = $request->file('image_profile')->store('profile', 'public');
+
+            if ($user->role === 'dosen') {
+                DB::table('dosen')
+                    ->where('id_user', $user->id_user)
+                    ->update([
+                        'foto_profile' => $path,
+                    ]);
+            } elseif ($user->role === 'admin') {
+                DB::table('admin')
+                    ->where('id_user', $user->id_user)
+                    ->update([
+                        'foto_profile' => $path,
+                    ]);
+            } else {
+                DB::table('mahasiswa')
+                    ->where('id_user', $user->id_user)
+                    ->update([
+                        'foto_profile' => $path,
+                    ]);
+            }
+
+            return back()->with('berhasil', 'Foto profile berhasil diupdate.');
+        }
 }

@@ -7,6 +7,7 @@ use App\Http\Controllers\mahasiswa\AssignmentsController;
 use App\Http\Controllers\mahasiswa\GradesController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Admin\UserManagementController;
+use App\Http\Controllers\Admin\MatkulController;
 use App\Services\UserManagementService;
 
 Route::get('/', function () {
@@ -85,10 +86,21 @@ Route::middleware(['auth', 'role:dosen'])->prefix('dosen')->group(function () {
 
 // ========================================================= hanya admin yg akses ====================================================
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
-    Route::get('/course-managementadmin', function () {
-        $page = 'page-coursemanagementadmin';
-        return view('admin.coursemanagement', compact('page'));
-    })->name('coursemanagementadmin');
+    Route::get('/course-managementadmin', [MatkulController::class, 'index'])
+        ->name('coursemanagementadmin');
+
+    Route::resource('matkuls', MatkulController::class)
+        ->names('admin.matkuls')
+        ->except(['show']);
+
+    Route::put('/course/{id_matkul}', [MatkulController::class, 'updateDetail'])
+         ->name('admin.course.update');
+
+    Route::get('/course/{id_matkul}', [MatkulController::class, 'show'])
+        ->name('admin.course.detail');
+
+    Route::post('/course/{id_matkul}/enroll', [MatkulController::class, 'enrollStudent'])
+        ->name('admin.course.enroll');
     
     // page user management
     Route::get('/user-management', [UserManagementController::class, 'pageUserManagement'])->name('usermanagementadmin');
@@ -124,6 +136,8 @@ Route::middleware('auth')->group(function () {
     })->name('profile.saya');
 
     Route::post('/edit-profile/{id}', [ProfileController::class, 'editAkun'])->name('akun.edit');
+    Route::post('/update-profile-photo', [ProfileController::class, 'updatePhoto'])
+    ->name('profile.photo.update');
 
     // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

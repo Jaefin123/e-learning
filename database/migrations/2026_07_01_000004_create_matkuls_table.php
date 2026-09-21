@@ -11,8 +11,11 @@ return new class extends Migration
         Schema::create('matkuls', function (Blueprint $table) {
             $table->string('id_matkul')->primary();
             $table->string('nama_matkul');
-            $table->text('deskripsi_matkul')->nullable();
+            $table->string('jurusan')->nullable();
+            $table->string('dosen_pengampu')->nullable();
             $table->integer('sks')->nullable();
+            $table->text('deskripsi_matkul')->nullable();
+            $table->string('image_path')->nullable();
             $table->timestamps();
         });
     }

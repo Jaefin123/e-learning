@@ -174,10 +174,9 @@
                             </div> --}}
 
                             <x-select-option label="Departement / Major" name="major" icon="" size="md">
-                                <option value="" disabled selected>Select your departement</option>
-                                <option value="TS">Teknik Sipil</option>
-                                <option value="TKM">Teknik Komputer</option>
-                                <option value="TL">Teknik Lingkungan</option>
+                                <option value="Teknik Sipil">Teknik Sipil</option>
+                                <option value="Teknik Komputer">Teknik Komputer</option>
+                                <option value="Teknik Lingkungan">Teknik Lingkungan</option>
                             </x-select-option>
 
                             {{-- <div class="space-y-2">

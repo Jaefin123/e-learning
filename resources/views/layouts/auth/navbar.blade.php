@@ -67,9 +67,13 @@
                           <p class="text-[10px] text-slate-500 uppercase tracking-tighter">{{ Auth::user()->role }} </p>
                       @endif
                   </div>
-                  <img alt="Student Profile Avatar"
-                      class="w-10 h-10 rounded-full border-2 border-primary-fixed object-cover"
-                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK8n1srjCFgzibSqwc1_kMJBNDzTUzZ5a7ZlZ8mMxoQDNcYxYiSN8sUsIyKOu5IqOxmviNoon3udJWnvUwBKPpwQGytH1cvCae7xoXq4iCfkUV1DNLXK1-lT2jGBvfl9jtK2ItTACG90YPYdfJ9ecZ5UAOtVRQmiTla-uzMvvy3IqSdeyPgvt3SKjiWb-4hSiAuO9vYtGa-Wm-08Dw8w7ZarA2cvjHAu65wt9qxvqBYP5L3s1iC-_W5twI_RjpcqxByyfYsIZiNFw" />
+                 <img
+                    alt="Profile Avatar"
+                    class="w-10 h-10 rounded-full border-2 border-primary-fixed object-cover"
+                    src="{{ $navbarUser->profile
+                        ? asset('storage/' . $navbarUser->profile)
+                        : asset('images/default-profile.png') }}"
+                />
               </summary>
 
               <!-- Isi Dropdown -->
